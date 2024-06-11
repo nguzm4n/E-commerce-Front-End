@@ -1,0 +1,10 @@
+.contenedor-carrusel {
+    max-width: 50%;
+    margin-left:25% ;
+}
+
+.imagen-carrusel {
+    object-fit: cover;
+    max-height: 500px;
+    width: 100%;
+}
