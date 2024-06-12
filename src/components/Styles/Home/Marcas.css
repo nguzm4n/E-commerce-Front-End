@@ -1,0 +1,8 @@
+.contenedor-marca {
+    max-width: 250px;
+    height: 200px;
+}
+
+.img-marca {
+    object-fit: cover;
+}

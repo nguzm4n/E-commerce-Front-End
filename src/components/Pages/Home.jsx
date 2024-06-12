@@ -2,13 +2,16 @@
 import React from 'react'
 import Carrusel from '../Home/Carrusel'
 import '../Styles/Home/Home.css'
+import Marcas from '../Home/Marcas'
 
 
 const Home = () => {
   return (
     <div className='custom-body'>
       <div>
-      <Carrusel />
+        <Marcas />
+        <Carrusel />
+
       </div>
     </div>
   )
