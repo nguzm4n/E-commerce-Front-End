@@ -5,6 +5,7 @@
 
 .imagen-carrusel {
     object-fit: cover;
-    max-height: 500px;
+    max-height: 400px;
     width: 100%;
+    
 }

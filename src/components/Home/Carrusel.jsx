@@ -4,7 +4,7 @@ import '../Styles/Home/Carrusel.css'
 
 const Carrusel = () => {
     return (
-        <div className='contenedor-carrusel '>
+        <div className='contenedor-carrusel py-5 '>
             <div id="carouselExample" className="carousel slide mt-5" data-bs-ride="carousel" data-bs-interval="4000">
                 <div className="carousel-inner">
                     <div className="carousel-item active">

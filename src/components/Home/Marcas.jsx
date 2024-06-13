@@ -1,46 +1,40 @@
 import React from 'react'
 import '../Styles/Home/Marcas.css'
 import gibsonlogo from '../img/gibsonlogo.jpg'
-import ibanez from '../img/ibanez-logo.png'
+import ibanez from '../img/ibanezlogo.png'
+import fender from '../img/fenderlogo.png'
+import prs from '../img/prslogo.png'
+import solar from '../img/solarlogo.jpg'
+import chapman from '../img/chapmanlogo.jpg'
+
 
 const Marcas = () => {
     return (
-        <div>
-            <div className="container-fluid">
-                <div className="row d-flex justify-content-center pt-5">
-                    <div class="contenedor-marca" style={{width: "18rem"}}>
-                        <img src={ibanez} class="card-img-top img-marca" alt="..." />
-                        <div class="card-body">
-                        </div>
+        <div className="container-fluid">
+            <div className="row pt-5 ">
+                <div className="col-sm-6 d-flex justify-content-end ">
+                    <div className="contenedor-marca " >
+                        <img src={ibanez} className="card-img-top img-marca" alt="Ibanez" />
                     </div>
-                    <div class="contenedor-marca" style={{width: "18rem"}}>
-                        <img src={gibsonlogo} class="card-img-top img-marca" alt="..." />
-                        <div class="card-body">
-                        </div>
+                    <div className="contenedor-marca" >
+                        <img src={gibsonlogo} className="card-img-top img-marca" alt="Gibson" />
                     </div>
-                    <div class="contenedor-marca" style={{width: "18rem"}}>
-                        <img src={ibanez} class="card-img-top img-marca" alt="..." />
-                        <div class="card-body">
-                        </div>
+                    <div className="contenedor-marca bg-black" >
+                        <img src={fender} className="card-img-top img-marca p-2" alt="Fender" />
                     </div>
-                    <div class="contenedor-marca" style={{width: "18rem"}}>
-                        <img src={gibsonlogo} class="card-img-top img-marca" alt="..." />
-                        <div class="card-body">
-                        </div>
                     </div>
-                    <div class="contenedor-marca" style={{width: "18rem"}}>
-                        <img src={ibanez} class="card-img-top img-marca" alt="..." />
-                        <div class="card-body">
-                        </div>
+                    <div className="col-sm-6 d-flex ">
+                    <div className="contenedor-marca bg-black " >
+                        <img src={prs} className="card-img-top img-marca" alt="PRS" />
                     </div>
-                    <div class="contenedor-marca" style={{width: "18rem"}}>
-                        <img src={gibsonlogo} class="card-img-top img-marca" alt="..." />
-                        <div class="card-body">
-                        </div>
+                    <div className="contenedor-marca" >
+                        <img src={solar} className="card-img-top img-marca" alt="Ibanez" />
+                    </div>
+                    <div className="contenedor-marca" >
+                        <img src={chapman} className="card-img-top img-marca" alt="Chapman" />
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
