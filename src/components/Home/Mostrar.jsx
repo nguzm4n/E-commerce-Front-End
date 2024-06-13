@@ -22,7 +22,7 @@ const Mostrar = () => {
                       
                         <p className='ms-auto me-auto mt-4'>We have the most complete stock of guitars for you!</p>
                         <p className='ms-3 me-3 mt-4'>Discover the epitome of musical craftsmanship with our exclusive range of guitars. Whether you're a seasoned performer or an aspiring artist, our guitars are designed to elevate your sound and inspire your creativity.</p>
-                        <p className='ms-3 me-3 mt-4'>Discover the music of your soul with one of our guitars, and feel free to create expand your GAS</p>
+                        <p className='ms-3 me-3 mt-4'>Discover the music of your soul with one of our guitars, and feel free to expand your GAS</p>
                         <h2 className='ms-auto me-auto mt-5'> Guitar Shop  <FaGuitar /></h2>
                     </div>
                 </div></div>
