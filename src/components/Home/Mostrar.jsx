@@ -16,7 +16,7 @@ const Mostrar = () => {
                 </div></div>
                 <div className="col-md-5 py-5">
                 <div className="">
-                    <div className='parrafo card'>
+                    <div className='card mt-5 mx-auto' style={{maxWidth : "600px"}}>
                         
                         <h2 className='ms-auto me-auto mt-4'>Explore your Talent!!!</h2>
                       
