@@ -7,8 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             name: "",
             cart: [],
             current_user: null,
-			access_token: null
-            
+			access_token: null,
+            error:""
         },
         actions: {
 
