@@ -123,7 +123,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 			},
-           
+			getPrs: () => {
+
+			},
+			getSolar: () => {},
+			getChapman: () => {}
+            
 
         }
     }
