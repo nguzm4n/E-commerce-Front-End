@@ -1,0 +1,12 @@
+.guitar-name {
+    transition: color 0.3s ease; 
+}
+
+.guitar-name:hover {
+    cursor: pointer;
+    color: #f0cd06
+}
+
+.guitar-img:hover {
+    cursor: pointer;
+}

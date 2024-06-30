@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import '../Styles/Store/Store.css'
 import { GiGuitarHead } from "react-icons/gi";
+import { Context } from '../../store/Appcontext';
+import GuitarCard from '../GuitarStore/GuitarCard.jsx'
+import CardTest from '../GuitarStore/CardTest.jsx'
 
 const Store = () => {
 
+
+  const { store, actions } = useContext(Context)
+
+  useEffect(() => {
+    actions.getPrs()
+  }, [])
 
   return (
     <div>
@@ -16,7 +25,18 @@ const Store = () => {
         <div className="row">
           <div className="col-md-1 bg-dark">HOLA
           </div>
-          <div className="col-md-10 bg-secondary parrilla">HOLA
+          <div className="col-md-10 bg-secondary parrilla d-flex flex-wrap">
+          
+          {store.guitars ? store.guitars.guitars.map((guitar) => (
+             <div key={guitar.id} className="col-md-4 mb-4"> {/* Utiliza col-md-4 para que cada GuitarCard ocupe 1/3 del espacio */}
+             <GuitarCard
+               id={guitar.id}
+               img={guitar.avatar}
+               name={guitar.name}
+               price={`$${guitar.price}.00`}
+             />
+           </div>
+            )) : <p>Loading...</p>}
           </div>
           <div className="col-md-1 bg-dark">HOLA
           </div>

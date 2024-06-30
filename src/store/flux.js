@@ -8,7 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             cart: [],
             current_user: null,
 			access_token: null,
-            error:""
+            error:"",
+			guitars: null
         },
         actions: {
 
@@ -123,7 +124,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 			},
-			getPrs: () => {
+			getPrs: async () => {
+				try {
+					const url = 'http://127.0.0.1:5000/getprs';
+					const options = {
+						method: "GET",
+						headers: { 'Content-Type': 'application/json' }
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ guitars: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
 
 			},
 			getSolar: () => {},
