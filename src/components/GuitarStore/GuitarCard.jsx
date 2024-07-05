@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../Styles/Store/GuitarCard.css'
 
-const GuitarCard = ({ img, name, price}) => {
+
+
+
+const GuitarCard = ({ img, name, price , Onclick}) => {
+
+
+
+
     return (
         <div>
             <div className="card mx-5 mt-5" style={{width: "18rem"}}>
@@ -9,7 +16,7 @@ const GuitarCard = ({ img, name, price}) => {
                 <div className="card-body text-center">
                     <h5 className="card-title guitar-name">{name}</h5>
                     <p className="card-text">{price}</p>
-                    <p href="#" className="btn btn-primary " type="button">Add Item to Cart</p>
+                    <p href="#" className="btn btn-primary " type="button" onClick={Onclick}>Add Item to Cart</p>
                 </div>
             </div>
         </div>

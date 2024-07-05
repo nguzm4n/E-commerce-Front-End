@@ -9,7 +9,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             current_user: null,
 			access_token: null,
             error:"",
-			guitars: null
+			guitars: null,
+			guitarId: null
         },
         actions: {
 
@@ -140,10 +141,159 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			getSolar: () => {},
-			getChapman: () => {}
-            
+			getSolar: async () => {
+				try {
+					const url = 'http://127.0.0.1:5000/getsolar';
+					const options = {
+						method: "GET",
+						headers: { 'Content-Type': 'application/json' }
+					}
 
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ guitars: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			},
+			getChapman: async () => {
+				try {
+					const url = 'http://127.0.0.1:5000/chapman';
+					const options = {
+						method: "GET",
+						headers: { 'Content-Type': 'application/json' }
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ guitars: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			},
+			getGuitarId: async () => {
+				try {
+					const url = `http://127.0.0.1:5000/getguitarid/${id}`;
+					const options = {
+						method: "GET",
+						headers: { 'Content-Type': 'application/json' }
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ guitarId: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			},
+			getAllGuitars: async () => {
+				try {
+					const url = 'http://127.0.0.1:5000/getall';
+					const options = {
+						method: "GET",
+						headers: { 'Content-Type': 'application/json' }
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ guitars: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			},
+			addItem:  (id) => {
+				const { access_token } = getStore()
+				const url = `http://127.0.0.1:5000/cart/add/${id}`;
+				const options = {
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer ' + access_token
+					},
+					
+				};
+
+				fetch(url, options)
+					.then(response => response.json())
+					.then(datos => {
+
+
+						console.log('Item Added to Cart', datos);
+						
+					})
+					.catch(error => console.error('Error adding to cart:', error));
+				
+			},
+			decreaseItem:  (id) => {
+				const { access_token } = getStore()
+				const url = `http://127.0.0.1:5000/cart/item/${id}/decrement`;
+				const options = {
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer ' + access_token
+					},
+					
+				};
+
+				fetch(url, options)
+					.then(response => response.json())
+					.then(datos => {
+
+
+						console.log('Item Decreased ', datos);
+						
+					})
+					.catch(error => console.error('Error decreasing item in cart:', error));
+				
+			},
+			deleteItem: (id) => {
+				const { access_token } = getStore()
+				const url = `http://127.0.0.1:5000/cart/remove/${id}`
+				const options = {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer ' + access_token
+					}
+				}
+				fetch(url, options)
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+					})
+					.catch(error => {
+
+						console.error(error.message);
+					});
+			},
+			clearCart: () => {},
+			getCart: async () => {
+				try {
+					const { access_token } = getStore()
+					const url = 'http://127.0.0.1:5000/cart';
+					const options = {
+						method: "GET",
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + access_token
+						},
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ cart: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			}
+			
         }
     }
 }

@@ -1,0 +1,12 @@
+.custom-dropdown-menu {
+    min-width: 350px; /* Ajusta este valor según lo necesites */
+    max-width: 500px; /* Opcional: establece un ancho máximo */
+}
+
+@media (max-width: 480px) {
+    .custom-dropdown-menu {
+        min-width: 350px; /* Ajusta este valor según lo necesites */
+        max-width: 500px; /* Opcional: establece un ancho máximo */
+    }
+
+}
