@@ -1,8 +1,4 @@
-# React + Vite
+# Guitar Shop!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was made in order to practice my knowledge in Front-End Development, using React.js, React Router Dom
+All this linked with a DATABASE , this is the link to the Back-End Repository https://github.com/nguzm4n/E-commerce-Back-End.git
