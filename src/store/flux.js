@@ -1,20 +1,21 @@
 const getState = ({ getStore, getActions, setStore }) => {
-    return {
-        store: {
-            email: "",
-            password: "",
-            username: "",
-            name: "",
-            cart: [],
-            current_user: null,
+
+	return {
+		store: {
+			email: "",
+			password: "",
+			username: "",
+			name: "",
+			cart: [],
+			current_user: null,
 			access_token: null,
-            error:"",
+			error: "",
 			guitars: null,
 			guitarId: null
-        },
-        actions: {
+		},
+		actions: {
 
-            login: async (credentials) => {
+			login: async (credentials) => {
 				try {
 					const { url } = getStore();
 					const options = {
@@ -30,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (data.msg) {
 						console.log(data);
-						
+
 
 					} else {
 						console.log(data);
@@ -44,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						});
 						sessionStorage.setItem('access_token', access_token);
 						sessionStorage.setItem('current_user', JSON.stringify(user));
-						
+
 					}
 
 				} catch (error) {
@@ -52,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-            signUp: async (credenciales) => {
+			signUp: async (credenciales) => {
 				try {
 					const { url } = getStore()
 					const option = {
@@ -68,11 +69,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const { cancelForm } = getActions()
 					if (datos.msg) {
 						console.log(datos)
-						
+
 					} else {
 						console.log(datos)
 
-						
+
 						const { access_token, user } = datos.datos;
 						setStore({
 							access_token: null,
@@ -80,9 +81,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 							email: '',
 							password: '',
 							username: '',
-                            name:''
+							name: ''
 						});
-						
+
 						sessionStorage.setItem('current_user', JSON.stringify(user));
 						cancelForm()
 					}
@@ -93,26 +94,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 
-            cancelForm: () => {
-				
+			cancelForm: () => {
+
 				setStore({
 					email: "",
 					password: "",
 				});
 			},
-            handleFormChange: (e) => {
+			handleFormChange: (e) => {
 				const { name, value } = e.target
 				setStore({
 					[name]: value
 				})
 			},
-            handleRegister: (e) => {
+			handleRegister: (e) => {
 				e.preventDefault();
 				const { name, email, password, username, repeatPassword } = getStore()
 				const { signUp } = getActions();
 				signUp({ email, password, name, username, repeatPassword });
 			},
-            logout: () => {
+			logout: () => {
 				if (sessionStorage.getItem('access_token')) {
 					setStore({
 						access_token: null,
@@ -136,6 +137,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const response = await fetch(url, options)
 					const datos = await response.json()
 					setStore({ guitars: datos })
+
 				} catch (error) {
 					console.log(error.message)
 				}
@@ -205,8 +207,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			addItem:  (id) => {
-				const { access_token } = getStore()
+			addItem: (id) => {
+				const { access_token } = getStore();
+				
 				const url = `http://127.0.0.1:5000/cart/add/${id}`;
 				const options = {
 					method: "POST",
@@ -214,22 +217,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Content-Type': 'application/json',
 						'Authorization': 'Bearer ' + access_token
 					},
-					
 				};
-
+			
 				fetch(url, options)
 					.then(response => response.json())
-					.then(datos => {
-
-
-						console.log('Item Added to Cart', datos);
+					.then(data => {
+						console.log('Response from addItem:', data);
+						setStore({ cart: datos} );
 						
 					})
 					.catch(error => console.error('Error adding to cart:', error));
-				
 			},
-			decreaseItem:  (id) => {
-				const { access_token } = getStore()
+			
+			decreaseItem: (id) => {
+				const { access_token } = getStore();
+				
 				const url = `http://127.0.0.1:5000/cart/item/${id}/decrement`;
 				const options = {
 					method: "POST",
@@ -237,20 +239,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Content-Type': 'application/json',
 						'Authorization': 'Bearer ' + access_token
 					},
-					
 				};
-
+			
 				fetch(url, options)
 					.then(response => response.json())
-					.then(datos => {
-
-
-						console.log('Item Decreased ', datos);
+					.then(data => {
+						console.log('Response from decreaseItem:', data);
+						setStore({ cart: data });
 						
 					})
 					.catch(error => console.error('Error decreasing item in cart:', error));
-				
 			},
+			
 			deleteItem: (id) => {
 				const { access_token } = getStore()
 				const url = `http://127.0.0.1:5000/cart/remove/${id}`
@@ -272,7 +272,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(error.message);
 					});
 			},
-			clearCart: () => {},
+			
 			getCart: async () => {
 				try {
 					const { access_token } = getStore()
@@ -293,9 +293,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			}
-			
-        }
-    }
+
+		}
+	}
 }
 
 

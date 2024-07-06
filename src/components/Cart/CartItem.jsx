@@ -14,7 +14,7 @@ const CartItem = ({ img, name, quantity }) => {
                         <div className="card-body">
                             <h5 className="card-title">{name}</h5>
                             <div className='d-flex'>
-                            <p className="card-text">Cantidad x {quantity} </p> 
+                            <p className="card-text">Quantity x {quantity} </p>  
                             </div>
                         </div>
                     </div>

@@ -14,6 +14,7 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
+import Cart from './components/Pages/Cart'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/store" element={<Store />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>

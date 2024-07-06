@@ -50,7 +50,7 @@ const Navbar = () => {
                                     quantity={item.quantity}
                                     name={item.product_name} />
                                 )) :<h5 className=' mt-1 text-center'>Cart is empty   (∪｡∪)｡｡｡zzz</h5> }
-                                {!!store.cart.cart && <li className='text-center pb-2'>GO TO CART</li>}
+                                {!!store.cart.cart && <li className='text-center pb-2'><Link className='' to="cart">GO TO CART</Link> </li>}
                             </ul>
                             </li>
                         </ul>
