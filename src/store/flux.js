@@ -223,7 +223,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => {
 						console.log('Response from addItem:', data);
-						setStore({ cart: datos} );
+						setStore({ cart: data } );
 						
 					})
 					.catch(error => console.error('Error adding to cart:', error));
@@ -266,6 +266,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return response.json();
 					})
 					.then(data => {
+						console.log('Response from deleteItem:', data);
+						setStore({ cart: data });
 					})
 					.catch(error => {
 
