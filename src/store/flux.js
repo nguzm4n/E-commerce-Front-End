@@ -221,9 +221,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 				fetch(url, options)
 					.then(response => response.json())
-					.then(data => {
+					.then(data => { 
+						if (data.success) {
 						console.log('Response from addItem:', data);
 						setStore({ cart: data } );
+						} else {data.msg}
+						
 						
 					})
 					.catch(error => console.error('Error adding to cart:', error));
@@ -244,8 +247,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch(url, options)
 					.then(response => response.json())
 					.then(data => {
-						console.log('Response from decreaseItem:', data);
-						setStore({ cart: data });
+						if (data.success) {
+							setStore({ cart: data } );
+						} else { data.msg}
 						
 					})
 					.catch(error => console.error('Error decreasing item in cart:', error));
