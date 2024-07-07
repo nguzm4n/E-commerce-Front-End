@@ -24,7 +24,7 @@ const CartItemBig = ({ img, name, quantity, price,id, onClick, decrease, increas
                             <h5 className="card-title">{name}</h5>
                             </div>
                             <div className='mt-5 d-flex justify-content-center'>
-                            <p className="card-text fs-5">Quantity x {quantity} </p> <div className='ms-2'><FaSquareMinus size={30} onClick={decrease} className='me-3' /> <FaSquarePlus size={30} onClick={increase} className=''/></div>
+                           <div className='d-flex align-items-center'> <p className="card-text fs-4 mb-0">Quantity </p> </div><div className='ms-2 d-flex align-items-center'><FaSquareMinus size={30} onClick={decrease} className='me-1' /> <p className='mb-0 quantity-number'>{quantity}</p> <FaSquarePlus size={30} onClick={increase} className='ms-1'/></div>
                             </div>
                             
                         </div>
