@@ -1,0 +1,27 @@
+/* @media (max-width: 1920px) {
+    .div-cart-item-big {
+     width: 1000px;;
+    }
+
+}
+
+
+
+@media (max-width: 1200px) {
+    .div-cart-item-big {
+     width: 600px;;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .div-cart-item-big {
+     width: 350px;;
+    }
+
+}
+ */
+
+ .img-cart-item-big {
+    max-width: ;
+ }
