@@ -13,7 +13,6 @@ const Home = () => {
   return (
     <div className='custom-body'>
       <div>
-        <Marcas />
         <Carrusel />
         <Mostrar />
         <Footer />
