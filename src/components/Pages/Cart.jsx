@@ -48,7 +48,7 @@ const Cart = () => {
             </div>
             <div className='text-center fs-3 py-5'>Total: {`${total.toFixed(2)}`}</div> 
           </div>
-          <div className="col-md-1 bg-dark">HOLA</div>
+          <div className="col-md-1 bg-dark"></div>
         </div>
       </div>
       <Footer />

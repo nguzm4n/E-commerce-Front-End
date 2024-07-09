@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../../store/Appcontext';
 import { useNavigate, Link } from "react-router-dom";
+import Footer from '../Home/Footer';
 
 
 const Signup = () => {
@@ -21,6 +22,7 @@ const Signup = () => {
     }, [store.current_user])
 
     return (
+        <>
         <div className='container'>
             <div className='row mt-5'>
             <form onSubmit={actions.handleRegister}>
@@ -46,7 +48,10 @@ const Signup = () => {
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         </div>
+        
         </div>
+        <Footer />
+        </>
     )
 }
 

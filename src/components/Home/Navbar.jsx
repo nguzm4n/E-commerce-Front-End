@@ -56,7 +56,7 @@ const Navbar = () => {
                                             img={item.product_avatar}
                                             quantity={item.quantity}
                                             name={item.product_name} />
-                                    )) : <h5 className=' mt-1 text-center'>Cart is empty   (∪｡∪)｡｡｡zzz</h5>}
+                                    )) : <h5 className=' mt-1 text-center'> Your Cart is empty   (∪｡∪)｡｡｡zzz</h5>}
                                     {!!store.cart.cart && <li className='text-center pb-2'><Link className='' to="cart">GO TO CART</Link> </li>}
                                 </ul>
                             </li>

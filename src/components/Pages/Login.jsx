@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../../store/Appcontext';
 import { useNavigate, Link } from "react-router-dom";
+import Footer from '../Home/Footer';
 
 
 
@@ -47,6 +48,7 @@ const Login = () => {
                     </form>
                 </div >
             </div>
+            <Footer />
             </>
             )
 }

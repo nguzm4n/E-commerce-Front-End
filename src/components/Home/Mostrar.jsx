@@ -1,14 +1,14 @@
 import React from 'react'
 import g1 from '../img/home/g1.jpg'
-import g2 from '../img/home/g2.jpg'
+
 import '../Styles/Home/mostrar.css'
 import { FaGuitar } from "react-icons/fa6";
 
 
 const Mostrar = () => {
   return (
-    <div className='bg-black'>
-        <div className="container-fluid py-4 ">
+    
+        <div className="container-fluid py-4 bg-black div-mostrar">
             <div className="row">
                 <div className="col-md-7 ps-5 py-5">
                 <div className="">
@@ -28,7 +28,7 @@ const Mostrar = () => {
                 </div></div>
             </div>
         </div>
-    </div>
+    
   )
 }
 

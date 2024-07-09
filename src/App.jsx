@@ -14,9 +14,9 @@ import { auto } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
 import Cart from './components/Pages/Cart'
-import Solar from './components/Pages/Telecaster'
-import Prs from './components/Pages/Stratocaster'
-import Chapman from './components/Pages/SG'
+import Telecaster from './components/Pages/Telecaster'
+import Stratocaster from './components/Pages/Stratocaster'
+import SG from './components/Pages/SG'
 
 
 function App() {
@@ -44,9 +44,9 @@ function App() {
         <Route path="/store" element={<Store />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Notfound />} />
-        <Route path="/stratocaster" element={<Prs />} />
-        <Route path="/sg" element={<Chapman />} />
-        <Route path="/telecaster" element={<Solar />} />
+        <Route path="/stratocaster" element={<Stratocaster />} />
+        <Route path="/sg" element={<SG />} />
+        <Route path="/telecaster" element={<Telecaster />} />
       </Routes>
     </BrowserRouter>
   )
