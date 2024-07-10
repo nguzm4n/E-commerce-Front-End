@@ -17,6 +17,13 @@ import Cart from './components/Pages/Cart'
 import Telecaster from './components/Pages/Telecaster'
 import Stratocaster from './components/Pages/Stratocaster'
 import SG from './components/Pages/SG'
+import Payment from './components/Pages/Payment'
+import ReactDOM from "react-dom"
+
+const PayPalButton = paypal.Buttons.driver("react", {
+    React,
+    ReactDOM
+});
 
 
 function App() {
@@ -47,6 +54,7 @@ function App() {
         <Route path="/stratocaster" element={<Stratocaster />} />
         <Route path="/sg" element={<SG />} />
         <Route path="/telecaster" element={<Telecaster />} />
+        <Route path="/pay" element={<Payment />} />
       </Routes>
     </BrowserRouter>
   )

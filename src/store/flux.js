@@ -11,7 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			access_token: null,
 			error: "",
 			guitars: null,
-			guitarId: null
+			guitarId: null,
+			total: null
 		},
 		actions: {
 
