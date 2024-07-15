@@ -1,14 +1,14 @@
 import React from 'react'
 import Footer from '../Home/Footer'
-import PayPalButton from './PaypalButton'
 import { GiGuitarHead } from 'react-icons/gi'
+import PaypalButton from './PaypalButton'
 
 const Payment = () => {
   return (
     <div>
     <div className='container-fluid d-flex justify-content-center bg-black'>
       <div className="row ">
-        <div className="col-md-12 pt-5 pb-5 text-light titulo">   <GiGuitarHead /> |  SG | <GiGuitarHead /> </div>
+        <div className="col-md-12 pt-5 pb-5 text-light titulo">   <GiGuitarHead /> |  Payment | <GiGuitarHead /> </div>
       </div>
     </div>
     <div className="container-fluid">
@@ -17,7 +17,7 @@ const Payment = () => {
         </div>
         <div className="col-md-10 bg-secondary parrilla">
         <h1>Checkout</h1>
-            <PayPalButton />
+            <PaypalButton />
       
         </div>
         <div className="col-md-1 bg-dark">
