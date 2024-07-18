@@ -12,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			error: "",
 			guitars: null,
 			guitarId: null,
-			total: null
+			total: null,
+			order: null
 		},
 		actions: {
 
