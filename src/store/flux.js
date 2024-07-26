@@ -6,6 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			password: "",
 			username: "",
 			name: "",
+			address: "",
 			cart: [],
 			current_user: null,
 			access_token: null,
@@ -19,7 +20,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			login: async (credentials) => {
 				try {
-					const { url } = getStore();
+					const { url } = getStore()
 					const options = {
 						method: 'POST',
 						body: JSON.stringify(credentials),
@@ -78,12 +79,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 						const { access_token, user } = datos.datos;
 						setStore({
-							access_token: null,
+							access_token: access_token,
 							current_user: user,
 							email: '',
 							password: '',
 							username: '',
-							name: ''
+							name: '',
+							address: ''
 						});
 
 						sessionStorage.setItem('current_user', JSON.stringify(user));
@@ -111,9 +113,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			handleRegister: (e) => {
 				e.preventDefault();
-				const { name, email, password, username, repeatPassword } = getStore()
+				const { name, email, password, username, repeatPassword, address } = getStore()
 				const { signUp } = getActions();
-				signUp({ email, password, name, username, repeatPassword });
+				signUp({ email, password, name, username, repeatPassword, address });
 			},
 			logout: () => {
 				if (sessionStorage.getItem('access_token')) {
@@ -296,6 +298,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const response = await fetch(url, options)
 					const datos = await response.json()
 					setStore({ cart: datos })
+					console.log(datos.success)
 				} catch (error) {
 					console.log(error.message)
 				}

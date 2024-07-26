@@ -45,7 +45,7 @@ const Login = () => {
             </div>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-1 bg-dark">Hello</div>
+                    <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary cart-container ">
                         <div className='row d-flex justify-content-center my-5 mx-5'>
                             <form onSubmit={handleLogin}>
