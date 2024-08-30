@@ -303,6 +303,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error.message)
 				}
 
+			},
+			searchItem: async (itemName) => {
+				try {
+					const { url } = getStore()
+					const options = {
+						method: 'POST',
+						body: JSON.stringify(itemName),
+						headers: {
+							'Content-type': 'application/json'
+						}
+					};
+
+					const response = await fetch(`http://127.0.0.1:5000/search`, options);
+					const data = await response.json();
+
+					if (data.msg) {
+						console.log(data);
+
+
+					} else {
+						console.log(data);
+
+						const { access_token, user } = data;
+						setStore({
+							access_token: access_token,
+							current_user: user,
+							email: '',
+							password: '',
+						});
+						
+
+					}
+
+				} catch (error) {
+					console.log(error.message);
+				}
+
 			}
 
 		}

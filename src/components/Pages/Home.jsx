@@ -2,7 +2,6 @@
 import React from 'react'
 import Carrusel from '../Home/Carrusel'
 import '../Styles/Home/Home.css'
-import Marcas from '../Home/Marcas'
 import Mostrar from '../Home/Mostrar'
 import Footer from '../Home/Footer'
 import { GiGuitarHead } from 'react-icons/gi'
