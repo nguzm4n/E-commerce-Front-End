@@ -4,14 +4,21 @@ import { IoMdCart } from "react-icons/io";
 import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css'
 import CartItemBig from '../Cart/CartItemBig';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const Cart = () => {
   const { store, actions } = useContext(Context);
-
+  const navigate = useNavigate();
   useEffect(() => {
     actions.getCart();
   }, []);
 
+  const goTo = () => {
+    navigate("/order")
+  }
+
+  
   const sortedCartItems = store.cart.cart ? [...store.cart.cart].sort((a, b) => a.product_id - b.product_id) : [];
   const total = sortedCartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
@@ -46,7 +53,10 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <div className='text-center fs-3 py-5'>Total: {`${total.toFixed(2)}`}</div> 
+            <div className='d-flex justify-content-center'>
+            <div className='text-center fs-3 py-5'>Total: {`${total.toFixed(2)}`}</div> <div><button type="button" onClick={() => {actions.createOrder(navigate)}} class="btn btn-success ms-5 my-5">CREATE ORDER</button></div>
+
+            </div>
           </div>
           <div className="col-md-1 bg-dark"></div>
         </div>

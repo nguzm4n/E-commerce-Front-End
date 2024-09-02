@@ -1,5 +1,7 @@
 import React from 'react'
 import { GiGuitarHead } from 'react-icons/gi'
+import PaypalButton from './PaypalButton'
+import Footer from '../Home/Footer'
 
 
 const Order = () => {
@@ -18,8 +20,8 @@ const Order = () => {
         </div>
         <div className="col-md-10 bg-secondary parrilla">
         <h1>Checkout</h1>
-           
-      
+        <PaypalButton />
+
         </div>
         <div className="col-md-1 bg-dark">
         </div>

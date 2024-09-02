@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
+import { Context } from '../../store/Appcontext';
 
 const Paypal = () => {
     const paypal = useRef();
+    const { store, actions } = useContext(Context);
 
     useEffect(() => {
         if (!paypal.current.innerHTML) { // Verifica si el contenedor ya está lleno
@@ -33,7 +35,7 @@ const Paypal = () => {
 
     return (
         <div>
-            Paypal
+            
             <div ref={paypal}></div>
         </div>
     );

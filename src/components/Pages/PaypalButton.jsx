@@ -9,9 +9,9 @@ const PayPalButton = () => {
 
 
 
-    <div>PayPalButton
+    <div className=''>
         
-       {checkout ? (<Paypal />) : ( <button onClick={() => {setCheckout(true)}}>Checkout</button> )}
+       {checkout ? (<Paypal />) : ( <button className='btn btn-success my-2' onClick={() => {setCheckout(true)}}>Payment</button> )}
          </div>
   )
 }

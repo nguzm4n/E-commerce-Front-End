@@ -14,7 +14,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			guitars: null,
 			guitarId: null,
 			total: null,
-			order: null
+			order: null,
+			orders:null
 		},
 		actions: {
 
@@ -327,7 +328,57 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error.message);
 				}
+			},
+			createOrder: async (navigate) => {
+				const { access_token } = getStore();
+				try {
+					const options = {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + access_token
+						}
+					};
+			
+					const response = await fetch('http://127.0.0.1:5000/order', options);
+					const data = await response.json();
+			
+					if (response.ok) {
+						console.log("Order created successfully:", data.order);
+						
+						setStore({ order: data.order });
+						navigate("/order");
+						
+					} else {
+						console.log("Error:", data.msg);
+					}
+				} catch (error) {
+					console.error("Error creating order:", error.message);
+				}
+			},
+			createOrder1: async () => {
+				const { access_token } = getStore();
+				try {
+					const response = await fetch('http://127.0.0.1:5000/order', {
+						method: 'POST',
+						headers: {
+							'Authorization': 'Bearer ' + access_token,
+							'Content-Type': 'application/json'
+						}
+					});
+					const data = await response.json();
+			
+					if (response.ok) {
+						const orderId = data.order.id; // Obtén el ID de la orden
+						return orderId;
+					} else {
+						console.log(data.msg);
+					}
+				} catch (error) {
+					console.error("Error creating order:", error.message);
+				}
 			}
+			
 			
 
 		}

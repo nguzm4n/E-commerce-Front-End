@@ -20,6 +20,7 @@ import SG from './components/Pages/SG'
 import Payment from './components/Pages/Payment'
 import ReactDOM from "react-dom"
 import SearchResults from './components/Pages/SearchResults'
+import Order from './components/Pages/Order'
 
 const PayPalButton = paypal.Buttons.driver("react", {
     React,
@@ -57,6 +58,7 @@ function App() {
         <Route path="/telecaster" element={<Telecaster />} />
         <Route path="searchresults" element={<SearchResults/>} />
         <Route path="/pay" element={<Payment />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
     </BrowserRouter>
   )
