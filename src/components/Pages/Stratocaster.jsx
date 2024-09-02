@@ -13,7 +13,7 @@ const Store = () => {
   const { store, actions } = useContext(Context)
 
   useEffect(() => {
-    actions.getPrs()
+    actions.getStrat()
   }, [])
 
   return (

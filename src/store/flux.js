@@ -130,9 +130,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				}
 			},
-			getPrs: async () => {
+			getStrat: async () => {
 				try {
-					const url = 'http://127.0.0.1:5000/getprs';
+					const url = 'http://127.0.0.1:5000/getstrat';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -147,9 +147,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			getSolar: async () => {
+			getTele: async () => {
 				try {
-					const url = 'http://127.0.0.1:5000/getsolar';
+					const url = 'http://127.0.0.1:5000/getsg';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -163,9 +163,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			getChapman: async () => {
+			getSg: async () => {
 				try {
-					const url = 'http://127.0.0.1:5000/chapman';
+					const url = 'http://127.0.0.1:5000/getsg';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -304,43 +304,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			searchItem: async (itemName) => {
+			searchItem: async (itemName, navigate) => {
 				try {
-					const { url } = getStore()
 					const options = {
 						method: 'POST',
-						body: JSON.stringify(itemName),
+						body: JSON.stringify({ search_term: itemName }),
 						headers: {
 							'Content-type': 'application/json'
 						}
 					};
-
+			
 					const response = await fetch(`http://127.0.0.1:5000/search`, options);
-					const data = await response.json();
-
-					if (data.msg) {
-						console.log(data);
-
-
+					const datos = await response.json();
+			
+					if (response.ok) {
+						setStore({ guitars: datos });
+						navigate("/searchresults");
 					} else {
-						console.log(data);
-
-						const { access_token, user } = data;
-						setStore({
-							access_token: access_token,
-							current_user: user,
-							email: '',
-							password: '',
-						});
-						
-
+						console.log(datos || "Error desconocido en la búsqueda");
 					}
-
+			
 				} catch (error) {
 					console.log(error.message);
 				}
-
 			}
+			
 
 		}
 	}

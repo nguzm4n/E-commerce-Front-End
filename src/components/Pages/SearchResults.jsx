@@ -1,5 +1,9 @@
-import React, { useContext} from 'react'
+import React, { useContext, useEffect } from 'react'
+import '../Styles/Store/Store.css'
+import { GiGuitarHead } from "react-icons/gi";
 import { Context } from '../../store/Appcontext.jsx';
+import GuitarCard from '../GuitarStore/GuitarCard.jsx'
+import Footer from '../Home/Footer.jsx'
 
 
 const SearchResults = () => {
@@ -20,7 +24,7 @@ const SearchResults = () => {
             </div>
             <div className="col-md-10 bg-secondary parrilla d-flex flex-wrap">
             
-            {store.guitars ? store.guitars.guitars.map((guitar) => (
+            {store.guitars ? store.guitars.results.map((guitar) => (
                <div key={guitar.id} className="col-md-4 mb-4"> 
                <GuitarCard
                  id={guitar.id}

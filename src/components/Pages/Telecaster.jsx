@@ -13,7 +13,7 @@ const Store = () => {
   const { store, actions } = useContext(Context)
 
   useEffect(() => {
-    actions.getSolar()
+    actions.getTele()
   }, [])
 
   return (

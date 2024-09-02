@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState} from 'react';
 import { FaGuitar } from "react-icons/fa6";
 import { IoMdCart } from "react-icons/io";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Context } from '../../store/Appcontext';
 import CartItem from '../Cart/CartItem';
 import '../Styles/Home/Navbar.css';
@@ -10,14 +10,19 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Navbar = () => {
     const { store, actions } = useContext(Context);
-
+    const navigate = useNavigate();
     const [search, setSearch] = useState("");
 
     const handleChange = (e) => {
-        const { search } = e.target;
-        if (search === "search") setSearch(value);
-        ;
+        setSearch(e.target.value);
+        
     };
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        actions.searchItem(search, navigate);
+    };
+    
 
     return (
         <div>
@@ -28,8 +33,8 @@ const Navbar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" value={search} onChange={handleChange} placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-dark" type="submit" onClick>Search</button>
+                        <input className="form-control me-2" type="search" value={search} onChange={handleChange} name="search" placeholder="Search" aria-label="Search" />
+                        <button className="btn btn-dark" type="submit" onClick={handleSearch}>Search</button>
                     </form>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">

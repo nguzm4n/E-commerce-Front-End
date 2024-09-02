@@ -13,7 +13,7 @@ const Store = () => {
   const { store, actions } = useContext(Context)
 
   useEffect(() => {
-    actions.getChapman()
+    actions.getSg()
   }, [])
 
   return (
