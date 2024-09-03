@@ -4,7 +4,7 @@ import { Context } from '../../store/Appcontext';
 const PaypalButton = ({ orderId }) => {
     const paypal = useRef();
     const [orderDetails, setOrderDetails] = useState(null);
-    const { store } = useContext(Context);
+    const { store, actions } = useContext(Context);
 
     const fetchOrderDetails = async () => {
         try {
@@ -27,6 +27,29 @@ const PaypalButton = ({ orderId }) => {
         }
         return null; // Retorna null si hubo un error
     };
+
+    const updateOrderStatus = async (status) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/order/${orderId}/status`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${store.access_token}`
+                },
+                body: JSON.stringify({ status: status })
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                console.log(`Order status updated to ${status}`);
+            } else {
+                console.log("Error updating order status:", data.msg);
+            }
+        } catch (error) {
+            console.error("Error updating order status:", error.message);
+        }
+    };
+
 
 
     useEffect(() => {
@@ -53,7 +76,7 @@ const PaypalButton = ({ orderId }) => {
                     const fetchedOrderDetails = await fetchOrderDetails();
                     console.log(fetchedOrderDetails);
 
-                    
+
                     const paymentDetails = {
                         order_id: orderId,
                         paypal_transaction_id: orderData.id,
@@ -83,6 +106,24 @@ const PaypalButton = ({ orderId }) => {
                     } catch (error) {
                         console.error("Error saving payment details:", error.message);
                     }
+
+
+                    if (fetchedOrderDetails) {
+                        // Asegúrate de redondear ambos valores a dos decimales para evitar problemas de precisión
+                        const paidAmount = parseInt(orderData.purchase_units[0].amount.value);
+                        const expectedAmount = fetchedOrderDetails.order.total_price;
+                        console.log("Fetched Order Details:", fetchedOrderDetails);
+                        console.log("Total Price Type:", typeof fetchedOrderDetails.order.total_price);
+                        console.log(paidAmount, expectedAmount)
+                        if (paidAmount === expectedAmount) {
+                            // Si el monto pagado es correcto, actualizar el estado a "Paid"
+                            await updateOrderStatus("Paid", orderId);
+                        } else {
+                            // Si el monto pagado no coincide, actualizar el estado a "Frozen"
+                            await updateOrderStatus("Frozen", orderId);
+                        }
+                    }
+
                 },
                 onError: (err) => {
                     console.log(err);
