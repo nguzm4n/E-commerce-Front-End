@@ -27,14 +27,7 @@ const PaypalButton = ({ orderId }) => {
         }
         return null; // Retorna null si hubo un error
     };
-    
 
-    // useEffect(() => {
-    //     if (orderDetails) {
-    //         console.log(orderDetails);
-            
-    //     }
-    // }, [orderDetails]);
 
     useEffect(() => {
         if (!paypal.current.innerHTML) {
@@ -56,12 +49,37 @@ const PaypalButton = ({ orderId }) => {
                 onApprove: async (data, actions) => {
                     const orderData = await actions.order.capture();
                     console.log(orderData);
-                    
-                    const fetchedOrderDetails = await fetchOrderDetails();
-                    console.log(fetchedOrderDetails);
+                    //Hacer fetch a la base de datos, verificar que el monto pagado coincida con el de la orden. si coinciden se cambia el status a pagado
 
-                    
+                    const paymentDetails = {
+                        order_id: orderId,
+                        paypal_transaction_id: orderData.id,
+                        payer_name: orderData.payer.name.given_name + " " + orderData.payer.name.surname,
+                        payment_time: orderData.create_time,
+                        amount: parseFloat(orderData.purchase_units[0].amount.value),
+                        currency: orderData.purchase_units[0].amount.currency_code
+                    };
+
+                    try {
+                        const response = await fetch('http://127.0.0.1:5000/payment', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${store.access_token}`
+                            },
+                            body: JSON.stringify(paymentDetails)
+                        });
                 
+                        const data = await response.json();
+                        if (response.ok) {
+                            console.log("Payment details saved:", data);
+                            // Aquí puedes cambiar el estado de la orden a pagada si todo es correcto
+                        } else {
+                            console.log("Error saving payment details:", data.msg);
+                        }
+                    } catch (error) {
+                        console.error("Error saving payment details:", error.message);
+                    }
                 },
                 onError: (err) => {
                     console.log(err);
