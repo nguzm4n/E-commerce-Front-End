@@ -50,7 +50,10 @@ const PaypalButton = ({ orderId }) => {
                     const orderData = await actions.order.capture();
                     console.log(orderData);
                     //Hacer fetch a la base de datos, verificar que el monto pagado coincida con el de la orden. si coinciden se cambia el status a pagado
+                    const fetchedOrderDetails = await fetchOrderDetails();
+                    console.log(fetchedOrderDetails);
 
+                    
                     const paymentDetails = {
                         order_id: orderId,
                         paypal_transaction_id: orderData.id,
