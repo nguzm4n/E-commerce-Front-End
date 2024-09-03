@@ -33,7 +33,7 @@ const Navbar = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" value={search} onChange={handleChange} name="search" placeholder="Search" aria-label="Search" />
+                        <input className="form-control me-2" type="search" value={search} onChange={handleChange} name="search" placeholder="Type a Guitar Model" aria-label="Search" />
                         <button className="btn btn-dark" type="submit" onClick={handleSearch}>Search</button>
                     </form>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">

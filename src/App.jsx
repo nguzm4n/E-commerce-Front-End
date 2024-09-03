@@ -58,7 +58,7 @@ function App() {
         <Route path="/telecaster" element={<Telecaster />} />
         <Route path="searchresults" element={<SearchResults/>} />
         <Route path="/pay" element={<Payment />} />
-        <Route path="/order" element={<Order />} />
+        <Route path="/order/:orderId" element={<Order />} />
       </Routes>
     </BrowserRouter>
   )

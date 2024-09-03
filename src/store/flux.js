@@ -345,7 +345,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 					if (response.ok) {
 						console.log("Order created successfully:", data.order);
-						
 						setStore({ order: data.order });
 						navigate("/order");
 						
@@ -356,28 +355,37 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error("Error creating order:", error.message);
 				}
 			},
-			createOrder1: async () => {
+			createOrder1: async (navigate) => {
 				const { access_token } = getStore();
+				console.log("Starting createOrder function");
 				try {
-					const response = await fetch('http://127.0.0.1:5000/order', {
+					const options = {
 						method: 'POST',
 						headers: {
-							'Authorization': 'Bearer ' + access_token,
-							'Content-Type': 'application/json'
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + access_token
 						}
-					});
+					};
+			
+					console.log("About to send fetch request");
+					const response = await fetch('http://127.0.0.1:5000/order', options);
+					console.log("Received response", response);
 					const data = await response.json();
 			
 					if (response.ok) {
+						console.log("Order created successfully:", data.order);
 						const orderId = data.order.id; // Obtén el ID de la orden
+						setStore({ order: data.order });
+						navigate(`/order/${orderId}`); // Incluye el ID en la URL
 						return orderId;
 					} else {
-						console.log(data.msg);
+						console.log("Error:", data.msg);
 					}
 				} catch (error) {
 					console.error("Error creating order:", error.message);
 				}
 			}
+			
 			
 			
 
