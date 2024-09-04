@@ -15,7 +15,7 @@ const MyOrders = () => {
   }, []);
 
   const goToPay = () => {
-    navigate("/pay")
+    navigate("/order/5")
   }
 
 
@@ -42,8 +42,11 @@ const MyOrders = () => {
                       orderId={order.order_id}
                       status={order.status}
                       id={order.id}
+                      date={order.created_at}
                       price={order.total_price}
                       pay={() => actions.fetchOrderDetails(order.id)}
+                      cancelOrder={() => actions.deleteOrder(order.id)}
+                      onclick={() => {goToPay()}}
                     />
                   
                 ))

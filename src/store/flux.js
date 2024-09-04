@@ -462,7 +462,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				return null; // Retorna null si hubo un error
 			},
+			deleteOrder: (id) => {
+				const { access_token } = getStore()
+				const url = `http://127.0.0.1:5000/delete/order/${id}`
+				const options = {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer ' + access_token
+					}
+				}
+				fetch(url, options)
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log('Response from deleteItem:', data);
+						setStore({ orders: data })
+					})
+					.catch(error => {
 
+						console.error(error.message);
+					});
+			},
 
 
 
