@@ -73,9 +73,15 @@ const Navbar = () => {
                         </ul>
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                             {store.access_token ? (
-                                <li className='nav-item'>
-                                    <Link className='nav-link btn btn-outline-secondary' to="/" onClick={actions.logout}>Log Out</Link>
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link btn btn-outline-secondary" to="myorders">My Orders</Link>
+                                    </li>
+                                    <li className='nav-item'>
+                                        <Link className='nav-link btn btn-outline-secondary' to="/" onClick={actions.logout}>Log Out</Link>
+                                    </li>
+                                </>
+                                
                             ) : (
                                 <>
                                     <li className="nav-item">

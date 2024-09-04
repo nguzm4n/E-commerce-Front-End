@@ -24,7 +24,7 @@ const SearchResults = () => {
             </div>
             <div className="col-md-10 bg-secondary parrilla d-flex flex-wrap">
             
-            {store.guitars ? store.guitars.results.map((guitar) => (
+            {store.guitars ? store.guitars.guitars.map((guitar) => (
                <div key={guitar.id} className="col-md-4 mb-4"> 
                <GuitarCard
                  id={guitar.id}
