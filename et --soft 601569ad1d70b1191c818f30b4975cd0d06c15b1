@@ -1,0 +1,267 @@
+[33mcommit 0043206c9476a2c8260caf40699d80718602aa9d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhola[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Wed Sep 4 19:26:51 2024 -0400
+
+    savepoint falta corregir error de los dropdowns
+
+[33mcommit 601569ad1d70b1191c818f30b4975cd0d06c15b1[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Wed Sep 4 17:29:40 2024 -0400
+
+    se pueden ver las ordenes
+
+[33mcommit f0e4c3d5df27df1d1f494530a3219da716d8f90c[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Wed Sep 4 11:28:00 2024 -0400
+
+    correccion error al cambiar de pagina luego de buscar items en la barra
+
+[33mcommit 622f74338c6e417577003653755ca8c5407853f9[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Sep 3 16:17:54 2024 -0400
+
+    ahora se valida que el monto pagado coincida con el de la base de datos
+
+[33mcommit b1fa714f0de03597bdf8bea4477ac604c922afc6[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Sep 3 15:57:29 2024 -0400
+
+    save point, se devuelve la orden de db  y a la vez lo de paypal
+
+[33mcommit 778fc5ce8a7ebf7be1faf02f0a8110b2fe8c1372[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Sep 3 15:53:12 2024 -0400
+
+    se agregan los detalles de orden luego de pagar
+
+[33mcommit 5a91c6baa4a26caa7c3115c3d5271b2447ef446f[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Sep 3 13:11:17 2024 -0400
+
+    se puede ver la orden luego de completarse, falta comparar
+
+[33mcommit 7b1fc0e8527a6be0585ab7fa3e7f7effe5d9b811[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Sep 2 18:27:02 2024 -0400
+
+    savepoint falta terminar pasarela
+
+[33mcommit 480d8d460b78a967800312fcbaf5bcc3580509e4[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Sep 2 12:15:57 2024 -0400
+
+    correccion rutas y agregan do funcionalidad buscar
+
+[33mcommit 87f79e94ed5aab2bdb918e5bcf41e404f85ae0bf[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Fri Aug 30 14:05:49 2024 -0400
+
+    avance
+
+[33mcommit 8d635090bf2a06e19d1c3d0164895eefe9d7f4ba[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Aug 29 17:54:35 2024 -0400
+
+    pagina de resultado de busqueda
+
+[33mcommit 688392ad86f2ac045b5a43800a5e0e73e07cbb9f[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Aug 15 14:39:04 2024 -0400
+
+    test
+
+[33mcommit 469fdd26041c2f490f6a567170a8f2602768340f[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Jul 30 16:12:33 2024 -0400
+
+    correcciones navbar
+
+[33mcommit da052f2d0b078713a217bf280aba7d77ee67ede7[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Jul 25 20:46:51 2024 -0400
+
+    fixes
+
+[33mcommit a24c5545c868f9c1df714748eb02154785d877fb[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Jul 18 18:01:06 2024 -0400
+
+    details
+
+[33mcommit fbf75766db9368c20c21d53eafea7989c76fff94[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Jul 16 13:03:41 2024 -0400
+
+    paypal
+
+[33mcommit 43e0e9ef9b71d80712524cb0f833db9f0898726d[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Jul 15 18:26:23 2024 -0400
+
+    not a commit
+
+[33mcommit 3372c4de881473c1f83aa1f6dc007bd3836b9bf4[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Wed Jul 10 16:43:07 2024 -0400
+
+    creando componentes paypal
+
+[33mcommit de49bf8ab351d800a647a3751e67db3ec6500055[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Jul 9 00:22:40 2024 -0400
+
+    adding footer fixing features
+
+[33mcommit a088f398bfda82c66644c3c48fdbea55d4c62bd2[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Jul 8 18:29:01 2024 -0400
+
+    correcciones no brands
+
+[33mcommit 089b9e7071dc35635e135b7d494f1448415bcc71[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Sat Jul 6 20:29:49 2024 -0400
+
+    detalles tarjeta cart item big
+
+[33mcommit b1dc19b563a261cf6ec7f48de79d8b0a7be157ed[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Sat Jul 6 20:06:16 2024 -0400
+
+    correccion div cart item big
+
+[33mcommit 3d8c8638a61444cb861ee69cf730dab6179ce17a[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Sat Jul 6 17:24:39 2024 -0400
+
+    correccion rutas y manejo de errores en , agregar, decrementar y borrar
+
+[33mcommit 2f2d7e7577281101e2147241536eae0a5064988c[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Sat Jul 6 16:54:22 2024 -0400
+
+    incrementar y decrementar funcionando
+
+[33mcommit 4b496b27d4cd5cf9d157248ec21e130d01e93e81[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Fri Jul 5 20:20:28 2024 -0400
+
+    falta corregir bugs en agregar, decrementar y eliminar del carro
+
+[33mcommit b1e490b8ffe213836d23a57a93898e3391ede2a7[m
+Merge: c0f6eea 381f99f
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Fri Jul 5 00:13:03 2024 -0400
+
+    Merge branch 'main' of https://github.com/nguzm4n/E-commerce-Front-End
+
+[33mcommit c0f6eea415559f40657826fd0f955ced3e476a62[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Fri Jul 5 00:12:25 2024 -0400
+
+    agregando carrito rutas
+
+[33mcommit 381f99fceb2a4852a94e16d052dcde323a410af4[m
+Author: Nicolás Guzmán <151692482+nguzm4n@users.noreply.github.com>
+Date:   Sun Jun 30 17:27:23 2024 -0400
+
+    Update README.md
+
+[33mcommit a14e8bed6cb703537de33a000d8caaaca4bc89e1[m
+Author: Nicolás Guzmán <151692482+nguzm4n@users.noreply.github.com>
+Date:   Sun Jun 30 17:25:33 2024 -0400
+
+    Update README.md
+
+[33mcommit b65907b08cef2d91f418c4aab74fff6dfb5677be[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Sun Jun 30 17:07:28 2024 -0400
+
+    agregando vista de guitarras en tienda
+
+[33mcommit 31a3dadd835e1952bb951a3cf4c85e7d94533687[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Jun 27 19:14:53 2024 -0400
+
+    setting up flux
+
+[33mcommit 4f5f9dd2b327af1c5ebda56acdf1466b078d2aa5[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Jun 25 11:59:09 2024 -0400
+
+    footer done
+
+[33mcommit b18e8afb7b7d2d402c3bbdf3d65a3d55be617bec[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Fri Jun 21 20:38:30 2024 -0400
+
+    just saving
+
+[33mcommit 1acf2303a5b4fe841814f1636313c465b71ad173[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Jun 20 18:04:28 2024 -0400
+
+    texto footer
+
+[33mcommit f888244f395324d1dc5d6eb95c29daa52ab26da5[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Wed Jun 19 17:50:52 2024 -0400
+
+    save store agregando background
+
+[33mcommit 15e9700338d099d789d2ea4162065f2bf35e5c07[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Jun 18 14:18:17 2024 -0400
+
+    creando implementación cloudinary
+
+[33mcommit aee297126af6a2affeec0c5b1242fdf7f1e71086[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Jun 17 13:03:40 2024 -0400
+
+    preparando store
+
+[33mcommit ae30c2b28e7c6475cee28ad9385e6eff8cc0bd1f[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Jun 17 12:53:07 2024 -0400
+
+    correccion de carpetas
+
+[33mcommit c0cf9608bcb1ac099575af2710c6070b1f1c521a[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Mon Jun 17 12:47:46 2024 -0400
+
+    saving before delete
+
+[33mcommit 361aa8f2ddee0f247545bb00d08c4241ebbe1d3f[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Fri Jun 14 18:01:06 2024 -0400
+
+    agregando componentes guitarcard, detailcard, agregando pagina detailview
+
+[33mcommit 62dfbbe18e86ee1d24320ae1d7ba3549a78d0ed5[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Jun 13 18:29:19 2024 -0400
+
+    agregando carrito y login al navbar
+
+[33mcommit b9e917e06123d303a86f50a8134a61638a7d0192[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Thu Jun 13 18:05:56 2024 -0400
+
+    agregando paneles
+
+[33mcommit 327f4f1c4981ed6f9ea13428b2cb100025308511[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Wed Jun 12 16:56:55 2024 -0400
+
+    agregando componente de marcas
+
+[33mcommit 7c3ca69b4f968c740fcc480366cc719b2ae33cd3[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com>
+Date:   Tue Jun 11 00:29:51 2024 -0400
+
+    agregando carrusel
+
+[33mcommit 0ac6250db286107aa69d03ded28664e4b0cd2508[m
+Author: Nicolás Guzmán <n3kguzman@gmail.com

@@ -5,8 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Context } from '../../store/Appcontext';
 import CartItem from '../Cart/CartItem';
 import '../Styles/Home/Navbar.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Navbar = () => {
     const { store, actions } = useContext(Context);
