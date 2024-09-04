@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			guitarId: null,
 			total: null,
 			order: null,
-			orders:null
+			orders: []
 		},
 		actions: {
 
@@ -214,7 +214,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addItem: (id) => {
 				const { access_token } = getStore();
-				
+
 				const url = `http://127.0.0.1:5000/cart/add/${id}`;
 				const options = {
 					method: "POST",
@@ -223,23 +223,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Authorization': 'Bearer ' + access_token
 					},
 				};
-			
+
 				fetch(url, options)
 					.then(response => response.json())
-					.then(data => { 
+					.then(data => {
 						if (data.success) {
-						console.log('Response from addItem:', data);
-						setStore({ cart: data } );
-						} else {data.msg}
-						
-						
+							console.log('Response from addItem:', data);
+							setStore({ cart: data });
+						} else { data.msg }
+
+
 					})
 					.catch(error => console.error('Error adding to cart:', error));
 			},
-			
+
 			decreaseItem: (id) => {
 				const { access_token } = getStore();
-				
+
 				const url = `http://127.0.0.1:5000/cart/item/${id}/decrement`;
 				const options = {
 					method: "POST",
@@ -248,18 +248,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Authorization': 'Bearer ' + access_token
 					},
 				};
-			
+
 				fetch(url, options)
 					.then(response => response.json())
 					.then(data => {
 						if (data.success) {
-							setStore({ cart: data } );
-						} else { data.msg}
-						
+							setStore({ cart: data });
+						} else { data.msg }
+
 					})
 					.catch(error => console.error('Error decreasing item in cart:', error));
 			},
-			
+
 			deleteItem: (id) => {
 				const { access_token } = getStore()
 				const url = `http://127.0.0.1:5000/cart/remove/${id}`
@@ -283,7 +283,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(error.message);
 					});
 			},
-			
+
 			getCart: async () => {
 				try {
 					const { access_token } = getStore()
@@ -314,17 +314,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 							'Content-type': 'application/json'
 						}
 					};
-			
+
 					const response = await fetch(`http://127.0.0.1:5000/search`, options);
 					const datos = await response.json();
-			
+
 					if (response.ok) {
 						setStore({ guitars: datos });
 						navigate("/searchresults");
 					} else {
 						console.log(datos || "Error desconocido en la búsqueda");
 					}
-			
+
 				} catch (error) {
 					console.log(error.message);
 				}
@@ -339,15 +339,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 							'Authorization': 'Bearer ' + access_token
 						}
 					};
-			
+
 					const response = await fetch('http://127.0.0.1:5000/order', options);
 					const data = await response.json();
-			
+
 					if (response.ok) {
 						console.log("Order created successfully:", data.order);
 						setStore({ order: data.order });
 						navigate("/order");
-						
+
 					} else {
 						console.log("Error:", data.msg);
 					}
@@ -366,12 +366,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 							'Authorization': 'Bearer ' + access_token
 						}
 					};
-			
+
 					console.log("About to send fetch request");
 					const response = await fetch('http://127.0.0.1:5000/order', options);
 					console.log("Received response", response);
 					const data = await response.json();
-			
+
 					if (response.ok) {
 						console.log("Order created successfully:", data.order);
 						const orderId = data.order.id; // Obtén el ID de la orden
@@ -384,11 +384,89 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.error("Error creating order:", error.message);
 				}
-			}
-			
-			
-			
-			
+			},
+			getAllOrders: async () => {
+				try {
+					const { access_token } = getStore();
+					const url = 'http://127.0.0.1:5000/userorders';
+					const options = {
+						method: "GET",
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + access_token
+						},
+					};
+
+					const response = await fetch(url, options);
+
+					// Verificar si la respuesta fue exitosa
+					if (!response.ok) {
+						const errorData = await response.json();
+						console.log('Error:', errorData.msg || 'Failed to fetch user orders');
+						return;  // Salir de la función en caso de error
+					}
+
+					const datos = await response.json();
+
+					// Verificar que 'datos' es lo que esperas (por ejemplo, un objeto con la clave 'order')
+					if (datos && datos.order) {
+						setStore({ orders: datos });
+						console.log(datos.order);
+					} else {
+						console.log('Unexpected response data:', datos);
+					}
+				} catch (error) {
+					console.log('Network or other error:', error.message);
+				}
+			},
+			getFullOrders: async () => {
+				const { access_token } = getStore();
+				try {
+					const url = 'http://127.0.0.1:5000/userorders';
+					const options = {
+						method: "GET",
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + access_token
+						}
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ orders: datos })
+					console.log(datos)
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			},
+
+			fetchOrderDetails: async (orderId, navigate) => {
+				try {
+					const response = await fetch(`http://127.0.0.1:5000/order/${orderId}`, {
+						method: 'GET',
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': `Bearer ${store.access_token}`
+						}
+					});
+					const data = await response.json();
+					if (response.ok) {
+						setStore({ order: data });
+						navigate("/pay")
+					} else {
+						console.log("Error fetching order details:", data.msg);
+					}
+				} catch (error) {
+					console.error("Error fetching order details:", error.message);
+				}
+				return null; // Retorna null si hubo un error
+			},
+
+
+
+
+
 
 		}
 	}

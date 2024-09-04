@@ -6,15 +6,19 @@ import '../Styles/Cart/Cart.css'
 import { useNavigate } from 'react-router-dom';
 import OrderCard from '../GuitarStore/OrderCard'
 
+
 const MyOrders = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
   useEffect(() => {
-    
+    actions.getFullOrders()
   }, []);
 
+  const goToPay = () => {
+    navigate("/pay")
+  }
 
-  
+
 
 
   return (
@@ -31,10 +35,25 @@ const MyOrders = () => {
           <div className="col-md-1 bg-dark">Hello</div>
           <div className="col-md-10 bg-secondary cart-container ">
             <div className=''>
-              <OrderCard />
+              {store.orders.orders && store.orders.orders.length > 0 ? (
+                store.orders.orders.map((order) => (
+                    <OrderCard
+                      key={order.id}
+                      orderId={order.order_id}
+                      status={order.status}
+                      id={order.id}
+                      price={order.total_price}
+                      pay={() => actions.fetchOrderDetails(order.id)}
+                    />
+                  
+                ))
+              ) : (
+                <p>Loading...</p>
+              )}
+
             </div>
             <div className='d-flex justify-content-center'>
-           
+
 
             </div>
           </div>
