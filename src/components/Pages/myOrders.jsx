@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import Footer from '../Home/Footer'
 import { IoMdCart } from "react-icons/io";
 import { Context } from '../../store/Appcontext';
@@ -9,6 +9,7 @@ import OrderCard from '../GuitarStore/OrderCard'
 
 const MyOrders = () => {
   const { store, actions } = useContext(Context);
+ 
   const navigate = useNavigate();
   useEffect(() => {
     actions.getFullOrders()
@@ -17,6 +18,7 @@ const MyOrders = () => {
   const goToPay = () => {
     navigate("/order/5")
   }
+
 
 
 
@@ -44,9 +46,9 @@ const MyOrders = () => {
                       id={order.id}
                       date={order.created_at}
                       price={order.total_price}
-                      pay={() => actions.fetchOrderDetails(order.id)}
+                      
                       cancelOrder={() => actions.deleteOrder(order.id)}
-                      onclick={() => {goToPay()}}
+                      onClick={() => actions.fetchOrderDetails(order.id, navigate)}
                     />
                   
                 ))

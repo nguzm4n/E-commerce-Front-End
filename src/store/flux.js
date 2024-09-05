@@ -442,25 +442,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			fetchOrderDetails: async (orderId, navigate) => {
+				const { access_token } = getStore(); 
+				
+			
 				try {
 					const response = await fetch(`http://127.0.0.1:5000/order/${orderId}`, {
 						method: 'GET',
 						headers: {
 							'Content-Type': 'application/json',
-							'Authorization': `Bearer ${store.access_token}`
+							'Authorization': `Bearer ${access_token}` 
 						}
 					});
-					const data = await response.json();
+			
 					if (response.ok) {
-						setStore({ order: data });
-						navigate("/pay")
+						const data = await response.json();
+						setStore({ order: data.order }); 
+						navigate(`/order/${orderId}`);
 					} else {
+						const data = await response.json();
 						console.log("Error fetching order details:", data.msg);
 					}
 				} catch (error) {
 					console.error("Error fetching order details:", error.message);
 				}
-				return null; // Retorna null si hubo un error
+				return null;
 			},
 			deleteOrder: (id) => {
 				const { access_token } = getStore()

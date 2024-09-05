@@ -13,7 +13,7 @@ const OrderDetails = ({ id, orderId, status, cancelOrder, quantity, price, name,
         <div>
             <div className="row container-fluid d-flex justify-content-center">
                 <div className="col-md-10">
-                    <div className="card mt-5 mb-5" style={{"width": "18rem;"}}>
+                    <div className="card mt-5 mb-5" >
                         <div className="card-header">
                             Order ID: {orderId}
                         </div>

@@ -4,7 +4,7 @@ import '../Styles/Store/GuitarCard.css'
 
 
 
-const GuitarCard = ({ id, orderId, status, onclick, cancelOrder, price, pay, date }) => {
+const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, date }) => {
 
 
 
@@ -22,7 +22,7 @@ const GuitarCard = ({ id, orderId, status, onclick, cancelOrder, price, pay, dat
                             <h5 className="card-title">Order Status: {status}</h5>
                             <h5 className="card-title">Amount: $ {price}.00 </h5>
                             <p className="card-text">Click on Order Details to see the entire order.</p>
-                            <a href="#" onClick={onclick} className="btn btn-primary my-1">Order Details</a> {/* Condicional para mostrar el botón de cancelar solo si el estado no es "Paid" */}
+                            <a href="#" onClick={onClick} className="btn btn-primary my-1">Order Details</a> {/* Condicional para mostrar el botón de cancelar solo si el estado no es "Paid" */}
                             {status !== "Paid" && (
                                 <a href="#" className="my-1 btn btn-danger" onClick={cancelOrder} >Cancel Order</a>
                             )}
