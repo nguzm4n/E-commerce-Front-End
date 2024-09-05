@@ -21,7 +21,7 @@ import Payment from './components/Pages/Payment'
 import ReactDOM from "react-dom"
 import SearchResults from './components/Pages/SearchResults'
 import Order from './components/Pages/Order'
-import MyOrders from './components/Pages/MyOrders'
+import MyOrders from './components/Pages/myOrders'
 
 
 const PayPalButton = paypal.Buttons.driver("react", {
