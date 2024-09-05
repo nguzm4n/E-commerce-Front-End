@@ -10,3 +10,28 @@
     }
 
 }
+
+/* En tu archivo CSS personalizado (Navbar.css o el archivo principal de estilos) */
+.navbar-nav .nav-link:hover {
+    color: #ffcc00;  /* Cambia el color al pasar el mouse */
+}
+
+
+.navbar-nav .nav-dropdown:hover {
+    color: #ffcc00; 
+}
+
+/* Botón de búsqueda por defecto */
+.btn-search {
+    background-color: #343a40;  /* Color de fondo inicial del botón */
+    color: white;  /* Color de texto del botón */
+    border: 1px solid #343a40;  /* Borde del mismo color que el fondo */
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Transición suave */
+}
+
+/* Cambios de color en hover */
+.btn-search:hover {
+    background-color: #ffcc00;  /* Color de fondo al hacer hover */
+    color: black;  /* Color del texto al hacer hover */
+    border: 1px solid #ffcc00;  /* Borde del mismo color que el fondo */
+}

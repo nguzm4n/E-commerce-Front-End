@@ -54,7 +54,7 @@ const Cart = () => {
               ))}
             </div>
             <div className='d-flex justify-content-center'>
-            <div className='text-center fs-3 py-5'>Total: {`${total.toFixed(2)}`}</div> <div><button type="button" onClick={() => {actions.createOrder1(navigate)}} class="btn btn-success ms-5 my-5">CREATE ORDER</button></div>
+            <div className='text-center fs-3 py-5'>Total: {`${total.toFixed(2)}`}</div> <div><button type="button" onClick={() => {actions.createOrder1(navigate)}} className="btn btn-success ms-5 my-5">CREATE ORDER</button></div>
 
             </div>
           </div>

@@ -11,20 +11,23 @@ const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, dat
 
     return (
         <div>
-            <div className="row container-fluid d-flex justify-content-center">
+            <div className="row container-fluid d-flex justify-content-center ">
                 <div className="col-md-6">
-                    <div className="card my-5">
-                        <div className="card-header">
+                    <div className="card my-5 rounded-1 border-black ">
+                        <div className="card-header border-black ">
                             Order ID: {orderId}
                         </div>
+                        
+                        <ul className="list-group list-group-flush  ">
+                            <li className="list-group-item border-black">Order Date: {date}</li>
+                            <li className="list-group-item border-black">Order Status: {status}</li>
+                            <li className="list-group-item border-black">Total Price: $ {price}.00</li>
+                        </ul>
                         <div className="card-body">
-                            <p className="card-title ">Order Date: {date}</p>
-                            <h5 className="card-title">Order Status: {status}</h5>
-                            <h5 className="card-title">Amount: $ {price}.00 </h5>
-                            <p className="card-text">Click on Order Details to see the entire order.</p>
-                            <a href="#" onClick={onClick} className="btn btn-primary my-1">Order Details</a> {/* Condicional para mostrar el botón de cancelar solo si el estado no es "Paid" */}
+                            <p className="card-text mt-3">Click on Order Details to see the entire order.</p>
+                            <a href="#" onClick={onClick} className="btn btn-primary my-1 rounded-1">Order Details</a> {/* Condicional para mostrar el botón de cancelar solo si el estado no es "Paid" */}
                             {status !== "Paid" && (
-                                <a href="#" className="my-1 btn btn-danger" onClick={cancelOrder} >Cancel Order</a>
+                                <a href="#" className="my-1 btn btn-danger ms-3 rounded-1" onClick={cancelOrder} >Cancel Order</a>
                             )}
                         </div>
                         {/* <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

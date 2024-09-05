@@ -14,7 +14,7 @@ const PayPalButton = ({ orderId }) => {
                 ) : (
                     <div className="row ">
                         <div className="container d-flex justify-content-center">
-                    <button className='btn btn-success my-5 ' onClick={() => { setCheckout(true) }}>
+                    <button className='btn btn-success my-5 btn-lg' onClick={() => { setCheckout(true) }}>
                         Continue to payment
                     </button>
                     </div>

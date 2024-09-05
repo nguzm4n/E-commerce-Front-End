@@ -44,8 +44,9 @@ const Order = () => {
 
 
 
+                        {store.order.status == 'Pending' ? <PaypalButton orderId={orderId} /> : <></>
+                        }
 
-                        <PaypalButton orderId={orderId} />
 
 
 

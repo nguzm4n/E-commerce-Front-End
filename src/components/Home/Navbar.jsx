@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGuitar } from "react-icons/fa6";
 import { IoMdCart } from "react-icons/io";
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,14 +13,14 @@ const Navbar = () => {
 
     const handleChange = (e) => {
         setSearch(e.target.value);
-        
+
     };
 
     const handleSearch = (e) => {
         e.preventDefault();
         actions.searchItem(search, navigate);
     };
-    
+
 
     return (
         <div>
@@ -32,7 +32,7 @@ const Navbar = () => {
                     </button>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" value={search} onChange={handleChange} name="search" placeholder="Type a Guitar Model" aria-label="Search" />
-                        <button className="btn btn-dark" type="submit" onClick={handleSearch}>Search</button>
+                        <button className="btn btn-dark btn-search" type="submit" onClick={handleSearch}>Search</button>
                     </form>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -43,10 +43,10 @@ const Navbar = () => {
                                 <button className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Guitars
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link className="dropdown-item" to="sg">SG Model</Link></li>
-                                    <li><Link className="dropdown-item" to="stratocaster">Stratocaster Model</Link></li>
-                                    <li><Link className="dropdown-item" to="telecaster">Telecaster Model</Link></li>
+                                <ul className="dropdown-menu rounded-1" aria-labelledby="navbarDropdown">
+                                    <li><Link className="dropdown-item rounded-0 nav-dropdown" to="sg">SG Model</Link></li>
+                                    <li><Link className="dropdown-item rounded-0 nav-dropdown" to="stratocaster">Stratocaster Model</Link></li>
+                                    <li><Link className="dropdown-item rounded-0 nav-dropdown" to="telecaster">Telecaster Model</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
@@ -56,16 +56,24 @@ const Navbar = () => {
                                 <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <IoMdCart color='white' size={25} />
                                 </Link>
-                                <ul className="dropdown-menu custom-dropdown-menu" style={{ minWidth: '350px', maxWidth: '500px' }}>
-                                    {store.cart.cart ? store.cart.cart.map((item) => (
-                                        <CartItem
-                                            key={item.id}
-                                            id={item.id}
-                                            img={item.product_avatar}
-                                            quantity={item.quantity}
-                                            name={item.product_name} />
-                                    )) : <h5 className='mt-1 text-center'> Your Cart is empty (∪｡∪)｡｡｡zzz</h5>}
-                                    {!!store.cart.cart && <li className='text-center pb-2'><Link to="cart">GO TO CART</Link></li>}
+                                <ul className="dropdown-menu custom-dropdown-menu rounded-1 border-secondary-subtle" style={{ minWidth: '350px', maxWidth: '500px' }}>
+                                    {store.cart.cart && store.cart.cart.length > 0 ? (
+                                        store.cart.cart.map((item) => (
+                                            <CartItem
+                                                key={item.id}
+                                                id={item.id}
+                                                img={item.product_avatar}
+                                                quantity={item.quantity}
+                                                name={item.product_name} />
+                                        ))
+                                    ) : (
+                                        <h5 className='mt-1 text-center rounded-0'>Your Cart is empty </h5>
+                                    )}
+                                    {store.cart.cart && store.cart.cart.length > 0 ? (
+                                        <li className='text-center pb-2'>
+                                            <Link to="cart">GO TO CART</Link>
+                                        </li>
+                                    ) : null}
                                 </ul>
                             </li>
                         </ul>
@@ -79,7 +87,7 @@ const Navbar = () => {
                                         <Link className='nav-link btn btn-outline-secondary' to="/" onClick={actions.logout}>Log Out</Link>
                                     </li>
                                 </>
-                                
+
                             ) : (
                                 <>
                                     <li className="nav-item">
