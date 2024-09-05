@@ -22,6 +22,7 @@ import ReactDOM from "react-dom"
 import SearchResults from './components/Pages/SearchResults'
 import Order from './components/Pages/Order'
 import MyOrders from './components/Pages/myOrders'
+import OrderPayed from './components/Pages/OrderPayed'
 
 
 const PayPalButton = paypal.Buttons.driver("react", {
@@ -32,15 +33,6 @@ const PayPalButton = paypal.Buttons.driver("react", {
 
 function App() {
 
-
-  const cld = new Cloudinary({ cloud: { cloudName: 'dfhyziduf' } });
-
-  // Use this sample image or upload your own via the Media Explorer
-  const img = cld
-    .image('cld-sample-5')
-    .format('auto') // Optimize delivery by resizing and applying auto-format and auto-quality
-    .quality('auto')
-    .resize(auto().gravity(autoGravity()).width(500).height(500)); // Transform the image: auto-crop to square aspect_ratio
 
 
   return (
@@ -62,6 +54,7 @@ function App() {
         <Route path="/pay" element={<Payment />} />
         <Route path="/order/:orderId" element={<Order />} />
         <Route path="/myorders" element={< MyOrders/>} />
+        <Route path="/successfull" element={< OrderPayed />} />
       </Routes>
     </BrowserRouter>
   )

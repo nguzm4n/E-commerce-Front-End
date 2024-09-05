@@ -18,6 +18,7 @@
 
 
 .navbar-nav .nav-dropdown:hover {
+    border-color: #ffcc00;
     color: #ffcc00; 
 }
 

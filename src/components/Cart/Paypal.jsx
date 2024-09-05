@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Context } from '../../store/Appcontext';
 
 const PaypalButton = ({ orderId }) => {
     const paypal = useRef();
     const [orderDetails, setOrderDetails] = useState(null);
     const { store, actions } = useContext(Context);
+    const navigate = useNavigate();
 
     const fetchOrderDetails = async () => {
         try {
@@ -118,6 +120,7 @@ const PaypalButton = ({ orderId }) => {
                         if (paidAmount === expectedAmount) {
                             // Si el monto pagado es correcto, actualizar el estado a "Paid"
                             await updateOrderStatus("Paid", orderId);
+                            navigate("/successfull")
                         } else {
                             // Si el monto pagado no coincide, actualizar el estado a "Frozen"
                             await updateOrderStatus("Frozen", orderId);
