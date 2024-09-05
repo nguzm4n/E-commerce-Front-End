@@ -4,7 +4,7 @@ import { GiGuitarHead } from 'react-icons/gi'
 import OrderDetails from './OrderDetails';
 import { Context } from '../../store/Appcontext';
 import OrderNameItem from './OrderNameItem'
-
+import '../Styles/Orders/OrderCard.css'
 
 
 const OrderPayed = () => {
