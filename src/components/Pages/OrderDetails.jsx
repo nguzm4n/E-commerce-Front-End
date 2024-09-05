@@ -13,15 +13,14 @@ const OrderDetails = ({ id, orderId, status, cancelOrder, quantity, price, name,
         <div>
             <div className="row container-fluid d-flex justify-content-center">
                 <div className="col-md-10">
-                    <div className="card mt-5 mb-5" >
+                    <div className="card mt-5 " >
                         <div className="card-header">
                             Order ID: {orderId}
                         </div>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Order Date:{date}</li>
-                            <li className="list-group-item">Product Name:{name}</li>
-                            <li className="list-group-item">Product Quantity:{quantity}</li>
-                            <li className="list-group-item">Total Price: {price}</li>
+                            <li className="list-group-item">Order Date: {date}</li>
+                            <li className="list-group-item">Order Status: {status}</li>
+                            <li className="list-group-item">Total Price: $ {price}.00</li>
                         </ul>
                     </div>
                 </div>

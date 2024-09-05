@@ -6,7 +6,7 @@ const PayPalButton = ({ orderId }) => {
 
     return (
         <div className="">
-            <div className='divpago '>
+            <div className='divpago mt-5'>
                 {checkout ? (
                     
                     <Paypal orderId={orderId} />

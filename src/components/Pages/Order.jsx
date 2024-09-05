@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import PaypalButton from './PaypalButton'
 import Footer from '../Home/Footer'
 import { GiGuitarHead } from 'react-icons/gi'
 import OrderDetails from './OrderDetails';
+import { Context } from '../../store/Appcontext';
+import OrderNameItem from './OrderNameItem'
 
 const Order = () => {
     const { orderId } = useParams();
+    const { store, actions } = useContext(Context);
     console.log(orderId)
     return (
         <div>
@@ -19,34 +22,33 @@ const Order = () => {
                 <div className="row">
                     <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary parrilla">
-                        <OrderDetails />
 
-                        {/* {store.orders.orders && store.orders.orders.length > 0 ? (
-                store.orders.orders.map((order) => (
-                    <OrderDetails
-                      key={order.id}
-                      orderId={order.order_id}
-                      status={order.status}
-                      id={order.id}
-                      date={order.created_at}
-                      price={order.total_price}
-                      pay={() => actions.fetchOrderDetails(order.id)}
-                      cancelOrder={() => actions.deleteOrder(order.id)}
-                      onclick={() => {goToPay()}}
-                    />
-                  
-                ))
-              ) : (
-                <p>Loading...</p>
-              )} */}
-                        
-                            
-                       
-                        
+
+                        {!!store.order ? store.order.items.map((item) => (
+                            <OrderNameItem
+                                key={item.id} // Asegúrate de agregar una key única si es posible
+                                name={item.product_name}
+                                quantity={item.quantity}
+                            />
+                        )) : <h5>Loading</h5>}
+                        <OrderDetails
+                            id={store.order.id}
+                            orderId={store.order.order_id}
+                            date={store.order.created_at}
+                            price={store.order.total_price}
+                            status={store.order.status}
+                        />
+
+
+
+
+
+
+
                         <PaypalButton orderId={orderId} />
-                        
-                        
-                        
+
+
+
                     </div>
                     <div className="col-md-1 bg-dark"></div>
                 </div>
