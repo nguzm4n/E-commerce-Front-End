@@ -21,11 +21,40 @@
 
 }
  */
+/* Estilo para achicar la imagen del carrito */
+.img-cart-item-big {
+    width: 500px; /* Ajusta el ancho según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+    margin-top: auto ;
+    margin-bottom: auto;
+}
 
- .img-cart-item-big {
-    max-width: ;
- }
 
  .quantity-number {
     font-size: 30px;
  }
+
+ /* Asegúrate de que el cursor cambie a pointer al pasar sobre los íconos */
+.fa-square-plus,
+.fa-square-minus,
+.fa-delete-left {
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre los íconos */
+}
+
+/* Opcional: Cambiar el color de los íconos al hacer hover */
+.fa-square-plus:hover,
+.fa-square-minus:hover,
+.fa-delete-left:hover {
+    color: #ffcc00; /* Cambia este color al que prefieras para el efecto hover */
+    transition: color 0.1s ease; /* Añade una transición suave para el cambio de color */
+}
+
+
+.div-cart-item-big {
+    background-color: #222222;
+}
+
+.cart-div-text {
+    color: white;
+}

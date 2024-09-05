@@ -13,14 +13,12 @@ const Navbar = () => {
 
     const handleChange = (e) => {
         setSearch(e.target.value);
-
     };
 
     const handleSearch = (e) => {
         e.preventDefault();
         actions.searchItem(search, navigate);
     };
-
 
     return (
         <div>
@@ -39,8 +37,8 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/">Home</Link>
                             </li>
-                            <li className="nav-item dropdown">
-                                <button className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown cart-icon">
+                                <button className="nav-link dropdown-toggle cart-icon " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Guitars
                                 </button>
                                 <ul className="dropdown-menu rounded-1" aria-labelledby="navbarDropdown">
@@ -52,9 +50,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="#">About</Link>
                             </li>
-                            <li className="nav-item dropdown" onClick={() => { actions.getCart() }}>
-                                <Link className="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <IoMdCart color='white' size={25} />
+                            <li className="nav-item dropdown  " onClick={() => { actions.getCart() }}>
+                                <Link className="nav-link dropdown-toggle  " to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <IoMdCart className='cart-icon' size={25} />
                                 </Link>
                                 <ul className="dropdown-menu custom-dropdown-menu rounded-1 border-secondary-subtle" style={{ minWidth: '350px', maxWidth: '500px' }}>
                                     {store.cart.cart && store.cart.cart.length > 0 ? (
@@ -87,7 +85,6 @@ const Navbar = () => {
                                         <Link className='nav-link btn btn-outline-secondary' to="/" onClick={actions.logout}>Log Out</Link>
                                     </li>
                                 </>
-
                             ) : (
                                 <>
                                     <li className="nav-item">
