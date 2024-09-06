@@ -4,7 +4,7 @@ import { CgNotes } from "react-icons/cg";
 import { IoIosInformationCircle } from "react-icons/io";
 
 
-const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, date, admin }) => {
+const UserOrderInfo = ({ id, orderId, status, onClick, cancelOrder, price, pay, date, admin }) => {
 
 
 
@@ -28,9 +28,7 @@ const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, dat
                         <div className="card-body">
                             <p className="card-text mt-3">Click on Order Details to see the entire order.</p>
                             <a href="#" onClick={onClick} className="btn btn-outline-warning my-1 rounded-1">Order Details</a> {/* Condicional para mostrar el botón de cancelar solo si el estado no es "Paid" */}
-                            {status == "Pending"  && (
-                                <a href="#" className="my-1 btn btn-outline-danger ms-3 rounded-1" onClick={cancelOrder} >Cancel Order</a>
-                            )}
+                            
                               {admin == true && status !== "Paid"  && (
                                 <a href="#" className="my-1 btn btn-outline-danger ms-3 rounded-1" onClick={cancelOrder} >Cancel Order</a>
                             )}
@@ -43,4 +41,4 @@ const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, dat
     )
 }
 
-export default GuitarCard
+export default UserOrderInfo

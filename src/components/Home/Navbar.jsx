@@ -77,11 +77,11 @@ const Navbar = () => {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         {store.access_token  ? (
                             <>
-                                {store.current_user?.admin == true && (<li className="nav-item">
+                                {store.current_user?.admin == false && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="myorders">My Orders</Link>
                                 </li>)}
                                 {store.current_user?.admin && (<li className="nav-item">
-                                    <Link className="nav-link mx-2 " to="allusers">Users</Link>
+                                    <Link className="nav-link mx-2 " to="userorders">Users</Link>
                                 </li>)}
                                 {store.current_user?.admin && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="management">Management</Link>

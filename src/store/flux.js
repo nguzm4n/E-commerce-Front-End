@@ -541,6 +541,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  },
 			  clearStoreUsers: () => {
 				setStore({users:[]})
+			  },
+			  getUserOrders: async (userId,navigate) => {
+				const { access_token } = getStore()
+				try {
+				  const token = localStorage.getItem("token"); // Obtener el token JWT si es necesario
+		
+				  const response = await fetch(`http://127.0.0.1:5000/admin/user_orders/${userId}`, {
+					method: 'GET',
+					headers: {
+					  'Content-Type': 'application/json',
+					  'Authorization': `Bearer ${access_token}` 
+					}
+				  });
+		
+				  if (!response.ok) {
+					const errorData = await response.json();
+					console.error('Error fetching user orders:', errorData);
+					return;
+				  }
+		
+				  const data = await response.json();
+				  setStore({ userOrders: data.orders });
+				  navigate("/userorders")  
+				} catch (error) {
+				  console.error('Error in fetch getUserOrders:', error);
+				}
 			  }
 
 

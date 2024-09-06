@@ -6,14 +6,15 @@ import '../Styles/Cart/Cart.css'
 import { useNavigate } from 'react-router-dom';
 import OrderCard from '../GuitarStore/OrderCard'
 import UserInfo from './UserInfo';
+import UserOrderInfo from './UserOrderInfo';
 
-const AllUsers = () => {
+const UserOrders = () => {
   const { store, actions } = useContext(Context);
  
   const navigate = useNavigate();
 
   useEffect(() => {
-    actions.getAllUsers()
+    
   }, [])
 
 
@@ -33,15 +34,24 @@ const AllUsers = () => {
           <div className="col-md-1 bg-dark"></div>
           <div className="col-md-10 bg-secondary cart-container ">
             <div className=''>
-            {store.users ? store.users.map((user) => (
-                <UserInfo 
-                    key={user.id}
-                    userId={user.id}
-                    user={user.id}
-                    name={user.name}
-                    mail={user.email}
-                />
-            ))  : null}
+            {store.userOrders && store.userOrders.length > 0 ? (
+                store.userOrders.map((order) => (
+                    <UserOrderInfo
+                      key={order.id}
+                      orderId={order.order_id}
+                      status={order.status}
+                      id={order.id}
+                      date={order.created_at}
+                      price={order.total_price}
+                      admin={store.current_user.admin}
+                      cancelOrder={() => actions.deleteOrder(order.id)}
+                      onClick={() => actions.fetchOrderDetails(order.id, navigate)}
+                    />
+                  
+                ))
+              ) : (
+                <p>Loading...</p>
+              )}
             </div>
           </div>
           <div className="col-md-1 bg-dark"></div>
@@ -52,4 +62,4 @@ const AllUsers = () => {
   );
 }
 
-export default AllUsers;
+export default UserOrders;

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../Home/Footer';
 import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css';
@@ -8,6 +9,8 @@ import EmptyCart from '../Cart/EmptyCart';
 const ManageUser = () => {
   const { store, actions } = useContext(Context);
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
 
   const handleSearchUser = (e) => {
     e.preventDefault();
@@ -51,7 +54,7 @@ const ManageUser = () => {
               <div>
               <button
                 className="btn btn-success ms-2"
-                onClick={actions.clearStoreUsers}
+                onClick={() => {actions.clearStoreUsers}}
               >
                Reset
               </button>
@@ -65,6 +68,7 @@ const ManageUser = () => {
                   user={user.id}
                   name={user.name}
                   mail={user.email}
+                  onClick={() => actions.getUserOrders(user.id, navigate)} 
                   
                 />
               )) :  <EmptyCart text="Not Current User Information"/>}
