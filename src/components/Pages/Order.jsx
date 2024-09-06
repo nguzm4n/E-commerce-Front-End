@@ -25,8 +25,9 @@ const Order = () => {
             <div className="container-fluid ">
                 <div className="row  ">
                     <div className="col-md-1 bg-dark"></div>
-                    <div className="col-md-10 bg-secondary parrilla  ">
+                    <div className="col-md-10 bg-secondary   ">
 
+                        <div className="mt-5"></div>
                         
                         {!!store.order ? store.order.items.map((item) => (
                             <OrderNameItem

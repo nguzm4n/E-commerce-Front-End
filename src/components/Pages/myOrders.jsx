@@ -57,10 +57,7 @@ const MyOrders = () => {
               )}
 
             </div>
-            <div className='d-flex justify-content-center'>
-
-
-            </div>
+            
           </div>
           <div className="col-md-1 bg-dark"></div>
         </div>
