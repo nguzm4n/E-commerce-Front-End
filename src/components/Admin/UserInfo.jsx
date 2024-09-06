@@ -3,7 +3,7 @@ import '../Styles/Orders/OrderCard.css'
 import { FaPencil } from "react-icons/fa6";
 
 
-const UserInfo = ({ id, userId, mail, cancelOrder, quantity, address, name  }) => {
+const UserInfo = ({ id, userId, mail, address, name, onClick  }) => {
 
 
 
@@ -22,6 +22,11 @@ const UserInfo = ({ id, userId, mail, cancelOrder, quantity, address, name  }) =
                             <li className="list-group-item border-warning div-item-name">Mail: {mail} </li>
                             <li className="list-group-item border-warning div-item-name">Address {address}</li>
                         </ul>
+                        <div className="card-body">
+                            <p className="card-text mt-1">Click Below to Check User Orders.</p>
+                            <a href="#" onClick={onClick} className="btn btn-outline-warning my-1 rounded-1">User Orders Details</a> 
+                            
+                        </div>
                     </div>
                 </div>
             </div>

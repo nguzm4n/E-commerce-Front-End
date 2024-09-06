@@ -33,7 +33,7 @@ const AllUsers = () => {
           <div className="col-md-1 bg-dark"></div>
           <div className="col-md-10 bg-secondary cart-container ">
             <div className=''>
-            {store.users.users ? store.users.users.map((user) => (
+            {store.users ? store.users.map((user) => (
                 <UserInfo 
                     key={user.id}
                     userId={user.id}

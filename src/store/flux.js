@@ -506,7 +506,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const response = await fetch(url, options)
 					const datos = await response.json()
-					setStore({ users: datos })
+					setStore({ users: datos.users })
 				} catch (error) {
 					console.log(error.message)
 				}
@@ -534,10 +534,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  }
 		
 				  const data = await response.json();
-				  setStore({ users: data });  
+				  setStore({ users: data.users });  
 				} catch (error) {
 				  console.error('Error in fetch searchUser:', error);
 				}
+			  },
+			  clearStoreUsers: () => {
+				setStore({users:[]})
 			  }
 
 

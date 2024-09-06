@@ -1,33 +1,23 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Footer from '../Home/Footer'
-import { IoMdCart } from "react-icons/io";
+import React, { useContext, useEffect, useState } from 'react';
+import Footer from '../Home/Footer';
 import { Context } from '../../store/Appcontext';
-import '../Styles/Cart/Cart.css'
-import { useNavigate } from 'react-router-dom';
-import OrderCard from '../GuitarStore/OrderCard'
+import '../Styles/Cart/Cart.css';
 import UserInfo from './UserInfo';
+import EmptyCart from '../Cart/EmptyCart';
 
 const ManageUser = () => {
   const { store, actions } = useContext(Context);
-  const handleSearchUser = (e) => {
-    e.preventDefault()
-    actions.searchUser(username)
-  }
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
+
+  const handleSearchUser = (e) => {
+    e.preventDefault();
+    actions.searchUser(username);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "username") setUsername(value);
-  
-};
-
-  useEffect(() => {
-    
-  }, [])
-
-
-
+  };
 
   return (
     <div>
@@ -41,25 +31,43 @@ const ManageUser = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-1 bg-dark"></div>
-          <div className="col-md-10 bg-secondary cart-container ">
+          <div className="col-md-10 bg-secondary cart-container">
             <div className="input-group mb-3 d-flex justify-content-center mt-5">
-            <form onSubmit={handleSearchUser}>
-                                <div className="mb-3 d-flex">
-                                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="textHelp" name="username"  placeholder="Name or Email" value={username} onChange={handleChange} />
-                                    <button type="submit" className="btn btn-outline-warning">Search</button>
-                                </div>                                                      
-                            </form>
+              <form onSubmit={handleSearchUser}>
+                <div className="mb-3 d-flex">
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="textHelp"
+                    name="username"
+                    placeholder="Name or Email"
+                    value={username}
+                    onChange={handleChange}
+                  />
+                  <button type="submit" className="btn btn-warning ms-2">Search</button>
+                </div>
+              </form>
+              <div>
+              <button
+                className="btn btn-success ms-2"
+                onClick={actions.clearStoreUsers}
+              >
+               Reset
+              </button>
+              </div>
             </div>
             <div className=''>
-              {store.users.users ? store.users.users.map((user) => (
+              {store.users.length > 0 ? store.users.map((user) => (
                 <UserInfo
                   key={user.id}
                   userId={user.id}
                   user={user.id}
                   name={user.name}
                   mail={user.email}
+                  
                 />
-              )) : null}
+              )) :  <EmptyCart text="Not Current User Information"/>}
             </div>
           </div>
           <div className="col-md-1 bg-dark"></div>
@@ -68,6 +76,6 @@ const ManageUser = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default ManageUser;

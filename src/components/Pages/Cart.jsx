@@ -52,7 +52,7 @@ const Cart = () => {
                   increase={() => { actions.addItem(item.product_id) }}
                 />
                 </div>
-              )) : <EmptyCart />}
+              )) : <EmptyCart text={"There's nothing in your cart"}/>}
             </div>
             {store.cart.cart && store.cart.cart.length > 0 ? <div className='d-flex justify-content-center'>
             <div className='text-center fs-3 py-5'>Total Amount: ${`${total.toFixed(2)}`}</div> <div><button type="button" onClick={() => {actions.createOrder1(navigate)}} className="btn btn-success ms-5 my-5">CREATE ORDER</button></div>
