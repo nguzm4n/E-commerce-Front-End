@@ -54,7 +54,7 @@ const ManageUser = () => {
               <div>
               <button
                 className="btn btn-success ms-2"
-                onClick={() => {actions.clearStoreUsers}}
+                onClick={() => {actions.clearStoreUsers()}}
               >
                Reset
               </button>

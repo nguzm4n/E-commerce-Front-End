@@ -5,6 +5,7 @@ import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css'
 import { useNavigate } from 'react-router-dom';
 import OrderCard from '../GuitarStore/OrderCard'
+import EmptyCart from '../Cart/EmptyCart';
 
 
 const MyOrders = () => {
@@ -53,7 +54,7 @@ const MyOrders = () => {
                   
                 ))
               ) : (
-                <p>Loading...</p>
+                <EmptyCart  text={"There's nothing here"}/>
               )}
 
             </div>

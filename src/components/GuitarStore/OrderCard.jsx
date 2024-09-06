@@ -4,7 +4,7 @@ import { CgNotes } from "react-icons/cg";
 import { IoIosInformationCircle } from "react-icons/io";
 
 
-const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, date, admin }) => {
+const OrderCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, date, admin }) => {
 
 
 
@@ -43,4 +43,4 @@ const GuitarCard = ({ id, orderId, status, onClick, cancelOrder, price, pay, dat
     )
 }
 
-export default GuitarCard
+export default OrderCard

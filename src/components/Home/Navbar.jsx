@@ -80,9 +80,9 @@ const Navbar = () => {
                                 {store.current_user?.admin == false && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="myorders">My Orders</Link>
                                 </li>)}
-                                {store.current_user?.admin && (<li className="nav-item">
+                                {/* {store.current_user?.admin && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="userorders">Users</Link>
-                                </li>)}
+                                </li>)} */}
                                 {store.current_user?.admin && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="management">Management</Link>
                                 </li>)}

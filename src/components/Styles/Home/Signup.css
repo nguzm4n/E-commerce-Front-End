@@ -1,0 +1,14 @@
+.div-sign {
+    background-color: #222222;
+    color: #ffcc00;
+}
+
+.div-sign-up-input:focus{
+    background-color: #222222;
+    color: white;
+}
+
+.div-sign-up-input {
+    background-color: #222222;
+    color: white;
+}
