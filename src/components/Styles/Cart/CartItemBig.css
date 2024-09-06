@@ -58,3 +58,8 @@
 .cart-div-text {
     color: white;
 }
+
+.div-cart-item-big {
+    width: 100%;
+    max-width: 950px; /* Ajusta según sea necesario */
+}

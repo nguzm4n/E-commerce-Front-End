@@ -22,12 +22,12 @@ const Order = () => {
                     <div className="col-md-12 pt-5 pb-5 text-light titulo">   <GiGuitarHead /> |  Your Order | <GiGuitarHead /> </div>
                 </div>
             </div>
-            <div className="container-fluid">
-                <div className="row">
+            <div className="container-fluid ">
+                <div className="row  ">
                     <div className="col-md-1 bg-dark"></div>
-                    <div className="col-md-10 bg-secondary parrilla">
+                    <div className="col-md-10 bg-secondary parrilla  ">
 
-
+                        
                         {!!store.order ? store.order.items.map((item) => (
                             <OrderNameItem
                                 key={item.id} // Asegúrate de agregar una key única si es posible
@@ -35,6 +35,8 @@ const Order = () => {
                                 quantity={item.quantity}
                             />
                         )) : <h5>Loading</h5>}
+
+
                         <OrderDetails
                             id={store.order.id}
                             orderId={store.order.order_id}

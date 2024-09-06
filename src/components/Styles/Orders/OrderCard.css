@@ -17,3 +17,15 @@
 .list-group-item.border-warning {
     border-color: #ffcc00;
 }
+
+.card .list-group-item.div-item-name {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00;
+}
+
+.card.div-item-name {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00;
+}
