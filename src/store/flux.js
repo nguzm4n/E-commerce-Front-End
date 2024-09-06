@@ -511,7 +511,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error.message)
 				}
 
-			}
+			},
+			searchUser: async (searchTerm) => {
+				try {
+					const { access_token } = getStore()
+		
+				  const response = await fetch('http://127.0.0.1:5000/admin/search_user', {
+					method: 'POST',
+					headers: {
+					  'Content-Type': 'application/json',
+					  'Authorization': `Bearer ${access_token}` 
+					},
+					body: JSON.stringify({
+					  search_term: searchTerm
+					})
+				  });
+		
+				  if (!response.ok) {
+					const errorData = await response.json();
+					console.error('Error searching user:', errorData);
+					return;
+				  }
+		
+				  const data = await response.json();
+				  setStore({ users: data });  
+				} catch (error) {
+				  console.error('Error in fetch searchUser:', error);
+				}
+			  }
 
 
 
