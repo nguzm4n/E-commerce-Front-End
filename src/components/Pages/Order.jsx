@@ -6,12 +6,14 @@ import { GiGuitarHead } from 'react-icons/gi'
 import OrderDetails from './OrderDetails';
 import { Context } from '../../store/Appcontext';
 import OrderNameItem from './OrderNameItem'
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
 const Order = () => {
     const { orderId } = useParams();
     const { store, actions } = useContext(Context);
+    const navigate = useNavigate();
     console.log(orderId)
     return (
         <div>
@@ -41,17 +43,9 @@ const Order = () => {
                             status={store.order.status}
                         />
 
-
-
-
-
-
                         {store.order.status == 'Pending' ? <PaypalButton orderId={orderId} /> : <></>
                         }
-
-
-
-
+                        
                     </div>
                     <div className="col-md-1 bg-dark"></div>
                 </div>

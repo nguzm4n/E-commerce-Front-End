@@ -5,6 +5,7 @@ import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css'
 import CartItemBig from '../Cart/CartItemBig';
 import { Link, useNavigate } from 'react-router-dom';
+import EmptyCart from '../Cart/EmptyCart';
 
 
 const Cart = () => {
@@ -37,7 +38,7 @@ const Cart = () => {
           <div className="col-md-1 bg-dark">Hello</div>
           <div className="col-md-10 bg-secondary cart-container ">
             <div className=''>
-              {!!store.cart.cart && sortedCartItems.map((item) => (
+              {store.cart.cart && store.cart.cart.length > 0 ? sortedCartItems.map((item) => (
                  <div className=' d-flex justify-content-center w-100 item-cart-big' key={item.product_id}>
                 <CartItemBig
                   
@@ -51,12 +52,12 @@ const Cart = () => {
                   increase={() => { actions.addItem(item.product_id) }}
                 />
                 </div>
-              ))}
+              )) : <EmptyCart />}
             </div>
-            <div className='d-flex justify-content-center'>
+            {store.cart.cart && store.cart.cart.length > 0 ? <div className='d-flex justify-content-center'>
             <div className='text-center fs-3 py-5'>Total Amount: ${`${total.toFixed(2)}`}</div> <div><button type="button" onClick={() => {actions.createOrder1(navigate)}} className="btn btn-success ms-5 my-5">CREATE ORDER</button></div>
 
-            </div>
+            </div> : null }
           </div>
           <div className="col-md-1 bg-dark"></div>
         </div>

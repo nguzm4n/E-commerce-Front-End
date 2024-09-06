@@ -4,13 +4,14 @@ import { GiGuitarHead } from 'react-icons/gi'
 import OrderDetails from './OrderDetails';
 import { Context } from '../../store/Appcontext';
 import OrderNameItem from './OrderNameItem'
+import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Orders/OrderCard.css'
 
 
 const OrderPayed = () => {
 
   const { store, actions } = useContext(Context);
-
+  const navigate = useNavigate();
   return (
     <div>
             <div className='container-fluid d-flex justify-content-center bg-black'>
@@ -22,8 +23,10 @@ const OrderPayed = () => {
                 <div className="row">
                     <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary parrilla">
-
-                      <h1>YOUR ORDER WAS SUCCESSFULLY COMPLETED</h1>
+                      <div className='d-flex justify-content-center my-5'>
+                      <h1>YOUR ORDER WAS SUCCESSFULLY COMPLETED!</h1>
+                      </div>
+                      
                         {!!store.order ? store.order.items.map((item) => (
                             <OrderNameItem
                                 key={item.id} // Asegúrate de agregar una key única si es posible
@@ -38,7 +41,12 @@ const OrderPayed = () => {
                             price={store.order.total_price}
                             status={store.order.status}
                         />
+                        <div className='d-flex justify-content-center my-5'>
+                        
+                    <Link type="button" class="btn btn-outline-warning" to="/" aria-current="page">Back to home</Link>
+                      </div>
                     </div>
+                    
                     <div className="col-md-1 bg-dark"></div>
                 </div>
             </div>

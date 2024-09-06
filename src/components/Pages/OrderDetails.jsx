@@ -12,7 +12,8 @@ const OrderDetails = ({ id, orderId, status, cancelOrder, quantity, price, name,
         <div>
             <div className="row container-fluid d-flex justify-content-center">
                 <div className="col-md-10">
-                    <div className="card my-5 rounded-0  border-warning rounded-1 div-cart-item-big " >
+                    <h3 className='mt-2'>Order Details:</h3>
+                    <div className="card my-4 rounded-0  border-warning rounded-1 div-cart-item-big mb-5 " >
                         <div className="card-header border-warning">
                             Order ID: {orderId}
                         </div>
