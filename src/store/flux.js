@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			username: "",
 			name: "",
 			address: "",
-			admin:null,
+			users: [],
 			cart: [],
 			current_user: null,
 			access_token: null,
@@ -443,21 +443,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			fetchOrderDetails: async (orderId, navigate) => {
-				const { access_token } = getStore(); 
-				
-			
+				const { access_token } = getStore();
+
+
 				try {
 					const response = await fetch(`http://127.0.0.1:5000/order/${orderId}`, {
 						method: 'GET',
 						headers: {
 							'Content-Type': 'application/json',
-							'Authorization': `Bearer ${access_token}` 
+							'Authorization': `Bearer ${access_token}`
 						}
 					});
-			
+
 					if (response.ok) {
 						const data = await response.json();
-						setStore({ order: data.order }); 
+						setStore({ order: data.order });
 						navigate(`/order/${orderId}`);
 					} else {
 						const data = await response.json();
@@ -491,6 +491,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.error(error.message);
 					});
 			},
+
+			getAllUsers: async () => {
+				const { access_token } = getStore()
+				try {
+					const url = 'http://127.0.0.1:5000/admin/users';
+					const options = {
+						method: "GET",
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': 'Bearer ' + access_token
+						}
+					}
+
+					const response = await fetch(url, options)
+					const datos = await response.json()
+					setStore({ users: datos })
+				} catch (error) {
+					console.log(error.message)
+				}
+
+			}
 
 
 

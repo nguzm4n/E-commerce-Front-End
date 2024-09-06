@@ -5,17 +5,16 @@ import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css'
 import { useNavigate } from 'react-router-dom';
 import OrderCard from '../GuitarStore/OrderCard'
+import UserInfo from './UserInfo';
 
-
-const ManageUser = () => {
+const AllUsers = () => {
   const { store, actions } = useContext(Context);
  
   const navigate = useNavigate();
 
-  const goToPay = () => {
-    navigate("/order/5")
-  }
-
+  useEffect(() => {
+    actions.getAllUsers()
+  }, [])
 
 
 
@@ -25,7 +24,7 @@ const ManageUser = () => {
       <div className='container-fluid d-flex justify-content-center bg-black'>
         <div className="row">
           <div className="col-md-12 pt-5 pb-5 text-light titulo">
-            Check User Info 
+            Users Info 
           </div>
         </div>
       </div>
@@ -34,7 +33,15 @@ const ManageUser = () => {
           <div className="col-md-1 bg-dark"></div>
           <div className="col-md-10 bg-secondary cart-container ">
             <div className=''>
-
+            {store.users.users ? store.users.users.map((user) => (
+                <UserInfo 
+                    key={user.id}
+                    userId={user.id}
+                    user={user.id}
+                    name={user.name}
+                    mail={user.email}
+                />
+            ))  : null}
             </div>
           </div>
           <div className="col-md-1 bg-dark"></div>
@@ -45,4 +52,4 @@ const ManageUser = () => {
   );
 }
 
-export default ManageUser;
+export default AllUsers;

@@ -81,6 +81,9 @@ const Navbar = () => {
                                     <Link className="nav-link mx-2 " to="myorders">My Orders</Link>
                                 </li>)}
                                 {store.current_user?.admin && (<li className="nav-item">
+                                    <Link className="nav-link mx-2 " to="allusers">Users</Link>
+                                </li>)}
+                                {store.current_user?.admin && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="management">Management</Link>
                                 </li>)}
                                 <li className='nav-item'>
