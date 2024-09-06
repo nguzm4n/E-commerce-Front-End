@@ -75,11 +75,14 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        {store.access_token ? (
+                        {store.access_token  ? (
                             <>
-                                <li className="nav-item">
+                                {store.current_user?.admin == true && (<li className="nav-item">
                                     <Link className="nav-link mx-2 " to="myorders">My Orders</Link>
-                                </li>
+                                </li>)}
+                                {store.current_user?.admin && (<li className="nav-item">
+                                    <Link className="nav-link mx-2 " to="management">Management</Link>
+                                </li>)}
                                 <li className='nav-item'>
                                     <Link className='nav-link  mx-2' to="/" onClick={actions.logout}>Log Out</Link>
                                 </li>

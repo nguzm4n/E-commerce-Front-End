@@ -23,7 +23,7 @@ import SearchResults from './components/Pages/SearchResults'
 import Order from './components/Pages/Order'
 import MyOrders from './components/Pages/myOrders'
 import OrderPayed from './components/Pages/OrderPayed'
-
+import ManageUser from './components/Admin/ManageUser'
 
 const PayPalButton = paypal.Buttons.driver("react", {
     React,
@@ -55,6 +55,7 @@ function App() {
         <Route path="/order/:orderId" element={<Order />} />
         <Route path="/myorders" element={< MyOrders/>} />
         <Route path="/successfull" element={< OrderPayed />} />
+        <Route path="/management" element={<ManageUser />} />
       </Routes>
     </BrowserRouter>
   )
