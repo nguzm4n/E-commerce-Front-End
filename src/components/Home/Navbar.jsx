@@ -23,14 +23,14 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">Guitar Shop <FaGuitar /></Link>
+                <Link className="navbar-brand" to="/"><span style={{"color":"#ffc107"}}>G</span>uitar Shop <FaGuitar /></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" value={search} onChange={handleChange} name="search" placeholder="Type a Guitar Model" aria-label="Search" />
-                        <button className="btn btn-dark btn-search" type="submit" onClick={handleSearch}>Search</button>
+                        <input className="form-control me-2 rounded-1" type="search" value={search} onChange={handleChange} name="search" placeholder="Type a Guitar Model" aria-label="Search" />
+                        <button className="btn btn-dark btn-search rounded-1" type="submit" onClick={handleSearch}>Search</button>
                     </form>
                     <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li className="nav-item">

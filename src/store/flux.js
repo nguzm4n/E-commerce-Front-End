@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			username: "",
 			name: "",
 			address: "",
+			admin:null,
 			cart: [],
 			current_user: null,
 			access_token: null,
