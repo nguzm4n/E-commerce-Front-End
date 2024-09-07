@@ -183,9 +183,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			getGuitarId: async () => {
+			getGuitarId: async (guitarId, navigate) => {
 				try {
-					const url = `http://127.0.0.1:5000/getguitarid/${id}`;
+					const url = `http://127.0.0.1:5000/getguitarid/${guitarId}`;
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -194,6 +194,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const response = await fetch(url, options)
 					const datos = await response.json()
 					setStore({ guitarId: datos })
+					navigate(`/guitar/${guitarId}`)
 				} catch (error) {
 					console.log(error.message)
 				}

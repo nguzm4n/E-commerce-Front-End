@@ -1,0 +1,46 @@
+.card .list-group-item.div-cart-item-big {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00;
+}
+
+.card.div-cart-item-big {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00;
+}
+
+.card-header.border-warning {
+    border-color: #ffcc00;
+}
+
+.list-group-item.border-warning {
+    border-color: #ffcc00;
+}
+
+.card .list-group-item.div-item-name {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00;
+}
+
+.card.div-item-name {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00;
+}
+
+.detail-card {
+    background-color: #222222;
+    color: white;
+    border-color: #ffcc00; 
+}
+
+.card.detail-card {
+    background-color: #222222;
+    border-color: #ffcc00; 
+}
+
+.detail-card-img {
+    
+}

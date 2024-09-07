@@ -10,6 +10,9 @@ import DetailCard from './DetailCard.jsx';
 
 
 const DetailsView = () => {
+
+  const { store, actions } = useContext(Context)
+
     return (
         <div>
         <div className='container-fluid d-flex justify-content-center bg-black'>
@@ -21,8 +24,20 @@ const DetailsView = () => {
           <div className="row">
             <div className="col-lg-1 bg-dark">
             </div>
-            <div className="col-lg-10 bg-secondary parrilla d-flex justify-content-center">
-            <DetailCard />
+            <div className="col-lg-10 bg-secondary parrilla d-flex justify-content-center cart-container">
+            
+                <DetailCard
+                  id={store.guitarId.guitar.id}
+                  img={store.guitarId.guitar.avatar}
+                  name={store.guitarId.guitar.name}
+                  price={`$${store.guitarId.guitar.price}.00`}
+                  description={store.guitarId.guitar.description}
+                  stock={store.guitarId.guitar.stock_quantity}
+                  onClick={() => { actions.addItem(store.guitarId.guitar.id) }}
+                  seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
+                />
+             
+            
               
             </div>
             <div className="col-lg-1 bg-dark">
