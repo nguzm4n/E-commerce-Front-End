@@ -1,25 +1,30 @@
 .custom-dropdown-menu {
-    min-width: 350px; /* Ajusta este valor según lo necesites */
-    max-width: 500px; /* Opcional: establece un ancho máximo */
+  min-width: 350px;
+  /* Ajusta este valor según lo necesites */
+  max-width: 500px;
+  /* Opcional: establece un ancho máximo */
 }
 
 @media (max-width: 480px) {
-    .custom-dropdown-menu {
-        min-width: 350px; /* Ajusta este valor según lo necesites */
-        max-width: 500px; /* Opcional: establece un ancho máximo */
-    }
+  .custom-dropdown-menu {
+    min-width: 350px;
+    /* Ajusta este valor según lo necesites */
+    max-width: 500px;
+    /* Opcional: establece un ancho máximo */
+  }
 
 }
 
 /* En tu archivo CSS personalizado (Navbar.css o el archivo principal de estilos) */
 .navbar-nav .nav-link:hover {
-    color: #ffcc00;  /* Cambia el color al pasar el mouse */
+  color: #ffcc00;
+  /* Cambia el color al pasar el mouse */
 }
 
 
 .navbar-nav .nav-dropdown:hover {
-    border-color: #ffcc00;
-    color: #ffcc00; 
+  border-color: #ffcc00;
+  color: #ffcc00;
 }
 
 
@@ -27,31 +32,44 @@
 /* Botón de búsqueda por defecto */
 
 .nav-item .nav-link .cart-icon {
-    color: white; /* Color predeterminado */
-  }
-  
-  .nav-item .nav-link:hover .cart-icon {
-    color: #ffcc00; /* Color en hover (puedes ajustar este color según tus preferencias) */
-  }
+  color: white;
+  /* Color predeterminado */
+}
 
-  .nav-item .nav-link {
-    color: white; /* Color predeterminado del texto e íconos */
-    position: relative;
-  }
-  
-  .nav-item .nav-link:hover{
-    color: #ffcc00; /* Color en hover para el texto e íconos */
-  }
-  
-  .nav-item .nav-link:hover .cart-icon {
-    color: #ffcc00; /* Asegura que el ícono del carrito cambie de color también */
-  }
-  
+.nav-item .nav-link:hover .cart-icon {
+  color: #ffcc00;
+  /* Color en hover (puedes ajustar este color según tus preferencias) */
+}
 
-  
-  .nav-item .nav-link:hover::after,
-  .nav-item .nav-link:focus::after {
-    border-top-color: #ffcc00; /* Cambia el color del indicador de dropdown en hover */
-  }
-  
-  
+.nav-item .nav-link {
+  color: white;
+  /* Color predeterminado del texto e íconos */
+  position: relative;
+}
+
+.nav-item .nav-link:hover {
+  color: #ffcc00;
+  /* Color en hover para el texto e íconos */
+}
+
+.nav-item .nav-link:hover .cart-icon {
+  color: #ffcc00;
+  /* Asegura que el ícono del carrito cambie de color también */
+}
+
+
+
+.nav-item .nav-link:hover::after,
+.nav-item .nav-link:focus::after {
+  border-top-color: #ffcc00;
+  /* Cambia el color del indicador de dropdown en hover */
+}
+
+.form-control.search-navbar:focus {
+  background-color: #222222;
+  color: white;
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 5px #ffcc00;
+
+}

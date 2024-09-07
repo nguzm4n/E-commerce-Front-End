@@ -29,13 +29,13 @@ const Cart = () => {
       <div className='container-fluid d-flex justify-content-center bg-black'>
         <div className="row">
           <div className="col-md-12 pt-5 pb-5 text-light titulo">
-            Your Cart! <IoMdCart />
+           Your Cart  <IoMdCart />
           </div>
         </div>
       </div>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-1 bg-dark">Hello</div>
+          <div className="col-md-1 bg-dark"></div>
           <div className="col-md-10 bg-secondary cart-container ">
             <div className=''>
               {store.cart.cart && store.cart.cart.length > 0 ? sortedCartItems.map((item) => (

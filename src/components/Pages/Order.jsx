@@ -25,7 +25,7 @@ const Order = () => {
             <div className="container-fluid ">
                 <div className="row  ">
                     <div className="col-md-1 bg-dark"></div>
-                    <div className="col-md-10 bg-secondary   ">
+                    <div className="col-md-10 bg-secondary cart-container  ">
 
                         <div className="mt-5"></div>
                         

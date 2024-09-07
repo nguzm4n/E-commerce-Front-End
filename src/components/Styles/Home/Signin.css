@@ -16,3 +16,8 @@
     background-color: #222222;
     color: white;
 }
+
+
+.cart-container{
+    min-height: 60vh;
+}
