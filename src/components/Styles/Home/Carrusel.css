@@ -1,6 +1,6 @@
 .contenedor-carrusel {
-    max-width: 50%;
-    margin-left:25% ;
+    max-width: 100%;
+   
 }
 
 .imagen-carrusel {
@@ -9,3 +9,19 @@
     width: 100%;
     
 }
+
+.div-carousel-container-f{
+    background-color:#333333 ;
+    
+}
+.carousel-item {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+    position: relative;
+  }

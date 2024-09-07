@@ -6,6 +6,7 @@ import { Context } from '../../store/Appcontext';
 import OrderNameItem from './OrderNameItem'
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Orders/OrderCard.css'
+import EmptyCart from '../Cart/EmptyCart';
 
 
 const OrderPayed = () => {
@@ -24,7 +25,8 @@ const OrderPayed = () => {
                     <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary parrilla">
                       <div className='d-flex justify-content-center my-5'>
-                      <h1>YOUR ORDER WAS SUCCESSFULLY COMPLETED!</h1>
+                        <EmptyCart text={"YOUR ORDER WAS SUCCESSFULLY COMPLETED!"}/>
+                    
                       </div>
                       
                         {!!store.order ? store.order.items.map((item) => (

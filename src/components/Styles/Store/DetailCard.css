@@ -42,5 +42,8 @@
 }
 
 .detail-card-img {
-    
-}
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio manteniendo la proporción */
+    border-radius: 8px; /* Si deseas mantener un borde redondeado */
+  }

@@ -4,12 +4,12 @@ import { GiGuitarHead } from "react-icons/gi";
 import { Context } from '../../store/Appcontext.jsx';
 import GuitarCard from '../GuitarStore/GuitarCard.jsx'
 import Footer from '../Home/Footer.jsx'
-
+import { useNavigate,useParams } from 'react-router-dom';
 
 const SearchResults = () => {
     const { store, actions } = useContext(Context)
-
-
+    const navigate = useNavigate();
+    const { guitarId } = useParams();
   
     return (
       <div>
@@ -32,6 +32,7 @@ const SearchResults = () => {
                   name={guitar.name}
                   price={`$${guitar.price}.00`}
                   Onclick={() => { actions.addItem(guitar.id) }}
+                  seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
                 />
               </div>
             )) : <p>Loading...</p>}

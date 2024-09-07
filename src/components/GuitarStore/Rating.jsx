@@ -9,14 +9,14 @@ const Rating = ({ rating, onChange }) => {
             if (i <= rating) {
                 stars.push(<FaStar key={i} className="star-padding"/>);
             } else {
-                stars.push(<FaRegStar key={i} className="star-padding"/>);
+                stars.push(<FaRegStar key={i} className="star-padding stars"/>);
             }
         }
         return stars;
     };
 
     return (
-        <div>
+        <div className=''>
             {renderStars()}
         </div>
     );
