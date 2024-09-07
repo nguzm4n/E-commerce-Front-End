@@ -5,12 +5,14 @@ import { Context } from '../../store/Appcontext.jsx';
 import GuitarCard from '../GuitarStore/GuitarCard.jsx'
 import CardTest from '../GuitarStore/CardTest.jsx'
 import Footer from '../Home/Footer.jsx'
-
+import { useNavigate,useParams } from 'react-router-dom';
 
 const Store = () => {
 
 
   const { store, actions } = useContext(Context)
+  const navigate = useNavigate();
+  const { guitarId } = useParams();
 
   useEffect(() => {
     actions.getSg()
@@ -37,6 +39,7 @@ const Store = () => {
                   name={guitar.name}
                   price={`$${guitar.price}.00`}
                   Onclick={() => { actions.addItem(guitar.id) }}
+                  seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
                 />
               </div>
             )) : <p>Loading...</p>}

@@ -565,7 +565,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		
 				  const data = await response.json();
 				  setStore({ userOrders: data.orders });
-				  navigate("/userorders")  
+				  navigate(`/userorders/${userId}`)  
 				} catch (error) {
 				  console.error('Error in fetch getUserOrders:', error);
 				}

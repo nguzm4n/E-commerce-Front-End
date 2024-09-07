@@ -9,7 +9,7 @@ const EmptyCart = ({text}) => {
         <div className='container my-5'>
             <div className="row card  border-warning rounded-0 div-item-name d-flex justify-content-center " >
                 <div className="col-md-12 d-flex justify-content-center">
-                    <h1>{text}</h1>
+                    <h1 className='mt-2'>{text}</h1>
                 </div>
             </div>
             <div className='d-flex justify-content-center my-5'>

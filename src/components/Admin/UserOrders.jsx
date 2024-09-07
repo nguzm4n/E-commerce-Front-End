@@ -3,14 +3,15 @@ import Footer from '../Home/Footer'
 import { IoMdCart } from "react-icons/io";
 import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useParams } from 'react-router-dom';
 import OrderCard from '../GuitarStore/OrderCard'
 import UserInfo from './UserInfo';
 import UserOrderInfo from './UserOrderInfo';
+import EmptyCart from '../Cart/EmptyCart';
 
 const UserOrders = () => {
   const { store, actions } = useContext(Context);
- 
+  const { userId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,7 +52,9 @@ const UserOrders = () => {
                   
                 ))
               ) : (
-                <p>Loading...</p>
+                <EmptyCart 
+                text={"User has no orders"}
+                />
               )}
             </div>
           </div>
