@@ -34,7 +34,7 @@ const DetailsView = () => {
                   description={store.guitarId.guitar.description}
                   stock={store.guitarId.guitar.stock_quantity}
                   onClick={() => { actions.addItem(store.guitarId.guitar.id) }}
-                  seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
+                  // seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
                 />
              
             

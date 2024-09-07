@@ -23,22 +23,13 @@ const DetailCard = ({ img, name, description, price, stock, buy, onClick }) => {
                 <div className="col-lg-8 mt-4 ">
                   <div className="card-body ">
                     <h5 className="card-title">{name}</h5>
-                    {/* <p>Características:</p>
-                      <ul>
-                      <li>Cuerpo de aliso ligero y resistente.</li>
-                      <li>Mástil de arce con diapasón de palo de rosa/arce.</li>
-                      <li>Configuración de pastillas SSS (3 pastillas de bobina simple).</li>
-                      <li>Puente de trémolo clásico para efectos de vibrato.</li>
-                      <li> Acabado brillante en una variedad de colores icónicos.</li>
-
-                      <li>Ideal para músicos que buscan un sonido auténtico y una presencia escénica inigualable. ¡Haz tuya esta Stratocaster y lleva tu música a nuevas alturas!</li>
-                      </ul> */}
+                
                     <p className="card-text mt-3">{description}</p>
                     <p className="card-text fs-4">{price}</p>
                     <p className="card-text">Stock Available : {stock}    </p>
                     <p href="#" className="btn btn-warning  " type="button" onClick={onClick}>Add Item to Cart</p>
 
-                    {/* <p className="card-text mt-3">{description}</p> */}
+                    
                   </div>
                 </div>
               </div>

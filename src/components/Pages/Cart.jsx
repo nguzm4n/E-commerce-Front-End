@@ -55,7 +55,7 @@ const Cart = () => {
               )) : <EmptyCart text={"There's nothing in your cart"}/>}
             </div>
             <div className='d-flex justify-content-center'>
-            {store.cart.cart && store.cart.cart.length > 0 ? <div className='d-flex justify-content-center price-div-container w-50 border border-warning'>
+            {store.cart.cart && store.cart.cart.length > 0 ? <div className='d-flex justify-content-center price-div-container w-50 border border-warning my-5'>
             <div className='text-center fs-3 py-5 px-2'>Total Amount: ${`${total.toFixed(2)}`}</div> <div className='mx-2 my-5'><button type="button" onClick={() => {actions.createOrder1(navigate)}} className="btn btn-success  ">CREATE ORDER</button></div>
 
             </div> : null }
