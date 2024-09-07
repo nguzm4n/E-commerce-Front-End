@@ -3,12 +3,17 @@
     color: #ffcc00;
 }
 
-.div-sign-up-input:focus{
+.form-control.div-sign-up-input:focus{
     background-color: #222222;
     color: white;
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px #ffcc00;
+    
 }
 
-.div-sign-up-input {
+.form-control.div-sign-up-input {
     background-color: #222222;
     color: white;
+    
 }

@@ -5,6 +5,8 @@ import { Context } from '../../store/Appcontext';
 import '../Styles/Cart/Cart.css';
 import UserInfo from './UserInfo';
 import EmptyCart from '../Cart/EmptyCart';
+import '../Styles/Admin/Manage.css'
+
 
 const ManageUser = () => {
   const { store, actions } = useContext(Context);
@@ -40,7 +42,7 @@ const ManageUser = () => {
                 <div className="mb-3 d-flex">
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control input-manage rounded-0 border-light-subtle"
                     id="exampleInputEmail1"
                     aria-describedby="textHelp"
                     name="username"

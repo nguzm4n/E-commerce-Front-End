@@ -1,17 +1,15 @@
-.div-sign-in {
+.form-control.input-manage{
     background-color: #222222;
-    color: #ffcc00;
+    color: white;
+    
 }
 
-.form-control.div-sign-in-input:focus{
+.form-control.input-manage:focus{
     background-color: #222222;
     color: white;
     outline: none;
+    
     border-color: #ffcc00;
     box-shadow: 0 0 5px #ffcc00;
 }
 
-.form-control.div-sign-in-input {
-    background-color: #222222;
-    color: white;
-}
