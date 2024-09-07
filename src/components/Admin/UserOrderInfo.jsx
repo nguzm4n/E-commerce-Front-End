@@ -4,7 +4,7 @@ import { CgNotes } from "react-icons/cg";
 import { IoIosInformationCircle } from "react-icons/io";
 
 
-const UserOrderInfo = ({ id, orderId, status, onClick, cancelOrder, price, pay, date, admin }) => {
+const UserOrderInfo = ({ id, orderId, status, onClick, cancelOrder, price, pay, date, admin, userId }) => {
 
 
 

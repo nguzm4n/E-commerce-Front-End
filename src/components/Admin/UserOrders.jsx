@@ -38,13 +38,14 @@ const UserOrders = () => {
                 store.userOrders.map((order) => (
                     <UserOrderInfo
                       key={order.id}
-                      orderId={order.order_id}
+                      orderId={order.id}
                       status={order.status}
+                      userId={order.user_id}
                       id={order.id}
                       date={order.created_at}
                       price={order.total_price}
                       admin={store.current_user.admin}
-                      cancelOrder={() => actions.deleteOrder(order.id)}
+                      cancelOrder={() => actions.AdminDeleteOrder(order.id,order.user_id)}
                       onClick={() => actions.fetchOrderDetails(order.id, navigate)}
                     />
                   

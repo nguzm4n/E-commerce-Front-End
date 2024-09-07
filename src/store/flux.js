@@ -1,3 +1,5 @@
+import { set } from "@cloudinary/url-gen/actions/variable";
+
 const getState = ({ getStore, getActions, setStore }) => {
 
 	return {
@@ -567,7 +569,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 				  console.error('Error in fetch getUserOrders:', error);
 				}
-			  }
+			  },
+			 
+			  AdminDeleteOrder: (orderId, userId) => {
+				const { access_token } = getStore()
+				const url = `http://127.0.0.1:5000/admin/order/${orderId}/${userId}`
+				const options = {
+					method: 'DELETE',
+					headers: {
+						'Content-Type': 'application/json',
+						'Authorization': 'Bearer ' + access_token
+					}
+				}
+				fetch(url, options)
+					.then(response => {
+						return response.json();
+					})
+					.then(data => {
+						console.log('Response from deleteItem:', data);
+						setStore({ userOrders: data.orders })
+					})
+					.catch(error => {
+
+						console.error(error.message);
+					});
+			},
 
 
 
