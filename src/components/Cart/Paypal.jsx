@@ -135,7 +135,7 @@ const PaypalButton = ({ orderId }) => {
         }
     }, [orderDetails]);
 
-    return <div ref={paypal}></div>;
+    return <div className='w-100' ref={paypal}></div>;
 };
 
 export default PaypalButton;

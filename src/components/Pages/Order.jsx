@@ -46,7 +46,7 @@ const Order = () => {
                             status={store.order.status}
                         />
 
-                        {store.order.status == 'Pending' && store.current_user.admin == false ? <PaypalButton orderId={orderId} /> : <></>
+                        {store.order.status == 'Pending' && store.current_user.admin == false ? <div className='d-flex justify-content-center'> <PaypalButton orderId={orderId} /> </div> : <></>
                         }
                         
                     </div>

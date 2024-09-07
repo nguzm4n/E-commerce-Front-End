@@ -471,6 +471,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				return null;
 			},
+			fetchPayedOrderDetails: async (orderId) => {
+				const { access_token } = getStore();
+
+
+				try {
+					const response = await fetch(`http://127.0.0.1:5000/order/${orderId}`, {
+						method: 'GET',
+						headers: {
+							'Content-Type': 'application/json',
+							'Authorization': `Bearer ${access_token}`
+						}
+					});
+
+					if (response.ok) {
+						const data = await response.json();
+						setStore({ order: data.order });
+						
+					} else {
+						const data = await response.json();
+						console.log("Error fetching order details:", data.msg);
+					}
+				} catch (error) {
+					console.error("Error fetching order details:", error.message);
+				}
+				return null;
+			},
 			deleteOrder: (id) => {
 				const { access_token } = getStore()
 				const url = `http://127.0.0.1:5000/delete/order/${id}`

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Paypal from '../Cart/Paypal';
+import '../Styles/Cart/Paypal.css'
 
 const PayPalButton = ({ orderId }) => {
     const [checkout, setCheckout] = useState(false);
 
     return (
-        <div className="">
-            <div className='divpago mt-5'>
+        <div className="d-flex justify-content-center div-btn-paypal mb-5">
+            <div className='divpago mt-5 w-100 d-flex justify-content-center'>
                 {checkout ? (
                     
                     <Paypal orderId={orderId} />

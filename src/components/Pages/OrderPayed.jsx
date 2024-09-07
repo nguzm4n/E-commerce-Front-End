@@ -6,13 +6,19 @@ import { Context } from '../../store/Appcontext';
 import OrderNameItem from './OrderNameItem'
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Orders/OrderCard.css'
-import EmptyCart from '../Cart/EmptyCart';
+import Success from '../Cart/Success';
 
 
 const OrderPayed = () => {
 
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (store.order && store.order.id) {
+      actions.fetchPayedOrderDetails(store.order.id);
+    }
+  }, []); 
   return (
     <div>
             <div className='container-fluid d-flex justify-content-center bg-black'>
@@ -25,7 +31,7 @@ const OrderPayed = () => {
                     <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary parrilla">
                       <div className='d-flex justify-content-center my-5'>
-                        <EmptyCart text={"YOUR ORDER WAS SUCCESSFULLY COMPLETED!"}/>
+                        <Success text={"YOUR ORDER WAS COMPLETED SUCCESSFULLY!"}/>
                     
                       </div>
                       
