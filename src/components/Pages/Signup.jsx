@@ -37,7 +37,7 @@ const Signup = () => {
                         <div className="col-md-1 bg-dark"></div>
                         <div className="col-md-10 bg-secondary cart-container  ">
                             <div className='row my-5 mx-5 px-3 1 d-flex justify-content-center'>
-                            <div className='col-md-7 div-sign-in  rounded-1 px-4 div-sign rounded- '>
+                            <div className='col-md-7 div-sign-in   px-4 div-sign rounded-0  '>
                                 <form onSubmit={actions.handleRegister}>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label mt-5 ">Email Address</label>

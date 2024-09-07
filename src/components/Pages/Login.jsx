@@ -48,7 +48,7 @@ const Login = () => {
                     <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary cart-container ">
                         <div className='row d-flex justify-content-center my-5 mx-5 rounded-1'>
-                            <div className='col-md-7 div-sign-in  rounded-1 px-4  '>
+                            <div className='col-md-7 div-sign-in  rounded-0 px-4  '>
                             <form onSubmit={handleLogin}>
                                 <div className="mb-3">
                                     <label htmlFor="example InputEmail1" className="form-label mt-5">Email </label>

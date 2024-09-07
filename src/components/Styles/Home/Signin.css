@@ -1,6 +1,7 @@
 .div-sign-in {
     background-color: #222222;
     color: #ffcc00;
+    border: 1px solid white;
 }
 
 .form-control.div-sign-in-input:focus{
