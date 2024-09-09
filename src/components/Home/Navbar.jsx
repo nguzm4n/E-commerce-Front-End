@@ -47,7 +47,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link ms-2" to="#">About</Link>
+                            <Link className="nav-link ms-2" to="/about">About</Link>
                         </li>
                         <li className="nav-item dropdown" onClick={() => { actions.getCart() }}>
                             <Link className="nav-link dropdown-toggle mx-2" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
