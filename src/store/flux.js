@@ -77,11 +77,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const { cancelForm } = getActions()
 					if (datos.msg) {
 						console.log(datos)
-						toast.error(data.msg)
+						toast.error(datos.msg)
 
 					} else {
 						console.log(datos)
-						toast.success(data.success)
+						toast.success(datos.success)
 
 						const { access_token, user } = datos.datos;
 						setStore({

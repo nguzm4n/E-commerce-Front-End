@@ -56,7 +56,7 @@ const Login = () => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                    <input type="password" className="form-control rounded-0 div-sign-in-input" id="exampleInputPassword1" name="password" value={password} onChange={handleChange} /> <Link id="emailHelp" class="form-text" style={{"color" :"#ffcc00"}}>Did you forget your password?</Link>
+                                    <input type="password" className="form-control rounded-0 div-sign-in-input" id="exampleInputPassword1" name="password" value={password} onChange={handleChange} /> <Link id="emailHelp" to="/recover" class="form-text" style={{"color" :"#ffcc00"}}>Did you forget your password?</Link>
                                     
                                 </div>
                                 

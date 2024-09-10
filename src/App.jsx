@@ -30,6 +30,7 @@ import About from './components/Pages/About'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ForgotPassword from './components/Pages/ForgotPass'
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
         <Route path="/userorders/:userId" element={<UserOrders />} />
         <Route path="/guitar/:guitarId" element={<DetailsView />} />
         <Route path="/about" element={<About />} />
+        <Route path="recover" element={<ForgotPassword />} />
         
       </Routes>
       <ToastContainer 
