@@ -11,7 +11,7 @@ const Carrusel = () => {
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
                                     <img
-                                        src="https://www.txirula.com/modules/dbblog/views/img/post/Choosing-the-Best-Guitar-Body-Style-Featured-Image.jpg"
+                                        src="https://github.com/nguzm4n/E-commerce-Front-End/blob/main/src/components/img/Carrusel/carrusel1.jpg?raw=true"
                                         className="d-block w-100 imagen-carrusel"
                                         alt="..."
                                         loading="lazy"
@@ -19,7 +19,7 @@ const Carrusel = () => {
                                 </div>
                                 <div className="carousel-item">
                                     <img
-                                        src="https://i.multisononline.com/blog/wp-content/uploads/2024/01/guitarras-electricas-historicas-1024x682.jpg"
+                                        src="https://github.com/nguzm4n/E-commerce-Front-End/blob/main/src/components/img/Carrusel/carrusel3.jpg?raw=true"
                                         className="d-block w-100 imagen-carrusel"
                                         alt="..."
                                         loading="lazy"
@@ -27,7 +27,7 @@ const Carrusel = () => {
                                 </div>
                                 <div className="carousel-item">
                                     <img
-                                        src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2FgB1pDaO.jpg&f=1&nofb=1&ipt=fcdf47fdddab502fb50a60748e0f04a212bbb3db01936ff833fd21b4881f2aed&ipo=images"
+                                        src="https://github.com/nguzm4n/E-commerce-Front-End/blob/main/src/components/img/Carrusel/carrusel2.jpg?raw=true"
                                         className="d-block w-100 imagen-carrusel"
                                         alt="..."
                                         loading="lazy"
