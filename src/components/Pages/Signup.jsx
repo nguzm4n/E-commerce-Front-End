@@ -27,8 +27,8 @@ const Signup = () => {
             <div>
                 <div className='container-fluid d-flex justify-content-center bg-black'>
                     <div className="row">
-                        <div className="col-md-12 pt-5 pb-5 text-light titulo">
-                            Sign Up!
+                        <div className="col-md-12 pt-5 pb-5 text-light titulo title-header">
+                            Sign Up<span style={{"color": "#ffc107"}}>!</span>!
                         </div>
                     </div>
                 </div>

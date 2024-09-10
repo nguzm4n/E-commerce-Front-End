@@ -28,7 +28,7 @@ const MyOrders = () => {
     <div>
       <div className='container-fluid d-flex justify-content-center bg-black'>
         <div className="row">
-          <div className="col-md-12 pt-5 pb-5 text-light titulo">
+          <div className="col-md-12 pt-5 pb-5 text-light titulo title-header">
             My Orders <IoMdCart />
           </div>
         </div>

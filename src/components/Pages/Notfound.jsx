@@ -17,7 +17,7 @@ const NotFound = () => {
     <div>
       <div className='container-fluid d-flex justify-content-center bg-black'>
         <div className="row">
-          <div className="col-md-12 pt-5 pb-5 text-light titulo">
+          <div className="col-md-12 pt-5 pb-5 text-light titulo title-header">
             ERROR 404 PAGE NOT FOUND <BiSolidMessageError />
           </div>
         </div>

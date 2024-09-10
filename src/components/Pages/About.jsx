@@ -14,8 +14,8 @@ const About = () => {
       {/* Título de la página */}
       <div className='container-fluid d-flex justify-content-center bg-black text-white'>
         <div className="row">
-          <div className="col-md-12 pt-5 pb-5 text-center">
-            <h1><span style={{ color: "#ffc107" }}>A</span>bout This <span style={{ color: "#ffc107" }}>W</span>ebsite  <IoDocumentText style={{ color: "#ffc107" }} /></h1>
+          <div className="col-md-12 pt-5 pb-5 text-center titulo">
+            <h1 className='about-header '><span style={{ color: "#ffc107" }}>A</span>bout This <span style={{ color: "#ffc107" }}>W</span>ebsite  <IoDocumentText style={{ color: "#ffc107" }} /></h1>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ const About = () => {
         <div className="row">
           <div className='col-lg-12 d-flex justify-content-center my-5 '>
             <div className='text-start mx-5 my-5' style={{ maxWidth: '60vw' }}>
-              <h1 className='about-text' style={{ color: "#ffc107" }}>PROJECT OVERVIEW</h1>
+              <h1 className='about-text about-text-title' style={{ color: "#ffc107" }}>PROJECT OVERVIEW</h1>
               <p className='about-text'>
                 This E-Commerce Project was developed as a comprehensive demonstration of full-stack development skills.
                 The website not only showcases user authentication and payment integration but also presents a complete user experience
@@ -49,7 +49,7 @@ const About = () => {
               <FaReact size={200} />
             </div>
             <div className='text-start mx-5 my-5' style={{ width: '50vw' }}>
-              <h1 className='about-text' style={{ color: "#ffc107" }}>TECHNOLOGIES</h1>
+              <h1 className='about-text about-text-title' style={{ color: "#ffc107" }}>TECHNOLOGIES</h1>
               <p className='about-text'>
                 Built using the React framework for the frontend, the site ensures a dynamic and user-friendly interface. On the backend, Flask powers the API,
                 managing tasks like user authentication, product handling, and payment processing. The integration of SQLAlchemy ensures efficient database management,
@@ -69,8 +69,8 @@ const About = () => {
       <div className="container-fluid bg-secondary text-white">
         <div className="row">
           <div className='col-md-12 d-flex justify-content-start mt-2 align-items-center'>
-            <div className='text-start mx-5 my-5' style={{ width: '50vw' }}>
-              <h1 className='about-text' style={{ color: "#ffc107" }}>KEY FEATURES</h1>
+            <div className='text-start mx-5 my-5 ' style={{ width: '50vw' }}>
+              <h1 className='about-text about-text-title' style={{ color: "#ffc107" }}>KEY FEATURES</h1>
               <ul className='about-text' style={{  paddingLeft: 0 }}>
                 <li>User authentication using secure JWT tokens</li>
                 <li>Responsive and intuitive user interface</li>
@@ -98,7 +98,7 @@ const About = () => {
               <FaCcPaypal size={200}  />
             </div>
             <div className='text-start mx-5 my-5' style={{ width: '40vw' }}>
-              <h1 className='about-text' style={{ color: "#ffc107" }}>PROJECT CHALLENGES</h1>
+              <h1 className='about-text about-text-title' style={{ color: "#ffc107" }}>PROJECT CHALLENGES</h1>
               <p className='about-text'>
                 Integrating a payment gateway like PayPal was one of the major challenges, requiring attention to detail to ensure secure and smooth transactions.
                 Another challenge was managing user authentication across multiple sessions and devices, which required careful handling of tokens and session data.
@@ -117,7 +117,7 @@ const About = () => {
         <div className="row">
           <div className='col-md-12 d-flex justify-content-start mt-2 align-items-center'>
             <div className='text-start mx-5 my-5' style={{ width: '40vw' }}>
-              <h1 className='about-text' style={{ color: "#ffc107" }}>LEARNING OUTCOMES</h1>
+              <h1 className='about-text about-text-title' style={{ color: "#ffc107" }}>LEARNING OUTCOMES</h1>
               <p className='about-text'>
                 This project not only solidified my understanding of full-stack development but also pushed me to learn more about backend optimization and API
                 integration. I deepened my knowledge of working with external APIs, such as PayPal, and explored ways to handle real-time data effectively.
@@ -140,7 +140,7 @@ const About = () => {
         <div className="row">
           <div className="col-md-12 d-flex justify-content-center my-5">
             <div className='text-center'>
-              <h1 className='about-text text-warning'>DEVELOPER</h1>
+              <h1 className='about-text text-warning about-text-title'>DEVELOPER</h1>
               <h2 className='about-text'>Nicolás Guzmán</h2>
               <p className='about-text'>
                 A passionate full-stack developer with expertise in building secure and scalable web applications.
