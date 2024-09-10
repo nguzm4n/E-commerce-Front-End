@@ -5,3 +5,8 @@
 .about-text {
     color: white;
 }
+
+
+.about-img {
+    max-width: 200px;
+}
