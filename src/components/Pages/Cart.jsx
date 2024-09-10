@@ -29,7 +29,7 @@ const Cart = () => {
       <div className='container-fluid d-flex justify-content-center bg-black'>
         <div className="row">
           <div className="col-md-12 pt-5 pb-5 text-light titulo title-header">
-           Your Cart  <IoMdCart />
+           Your Cart  <IoMdCart style={{"color": "#ffc107"}} />
           </div>
         </div>
       </div>

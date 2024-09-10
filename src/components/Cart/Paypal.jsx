@@ -121,9 +121,11 @@ const PaypalButton = ({ orderId }) => {
                             // Si el monto pagado es correcto, actualizar el estado a "Paid"
                             await updateOrderStatus("Paid", orderId);
                             navigate("/successfull")
+                            toast.success("Your Payment was Successfull")
                         } else {
                             // Si el monto pagado no coincide, actualizar el estado a "Frozen"
                             await updateOrderStatus("Frozen", orderId);
+                            toast.error("Something went wrong, please contact support")
                         }
                     }
 

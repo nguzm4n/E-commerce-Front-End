@@ -31,7 +31,7 @@ const OrderPayed = () => {
                     <div className="col-md-1 bg-dark"></div>
                     <div className="col-md-10 bg-secondary parrilla">
                       <div className='d-flex justify-content-center my-5'>
-                        <Success text={"YOUR ORDER WAS COMPLETED SUCCESSFULLY!"}/>
+                        <Success text={"YOUR ORDER WAS SUCCESSFULLY COMPLETED!"}/>
                     
                       </div>
                       

@@ -1,4 +1,4 @@
-import { set } from "@cloudinary/url-gen/actions/variable";
+import { toast } from "react-toastify";
 
 const getState = ({ getStore, getActions, setStore }) => {
 
@@ -38,12 +38,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if (data.msg) {
 						console.log(data);
-
+						toast.error(data.msg)
 
 					} else {
 						console.log(data);
-
-						const { access_token, user } = data;
+						toast.success(data.success)
+						const { access_token, user } = data.datos;
 						setStore({
 							access_token: access_token,
 							current_user: user,
@@ -57,6 +57,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				} catch (error) {
 					console.log(error.message);
+					
 				}
 
 			},
@@ -76,10 +77,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const { cancelForm } = getActions()
 					if (datos.msg) {
 						console.log(datos)
+						toast.error(data.msg)
 
 					} else {
 						console.log(datos)
-
+						toast.success(data.success)
 
 						const { access_token, user } = datos.datos;
 						setStore({
@@ -131,7 +133,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					sessionStorage.removeItem('access_token')
 					sessionStorage.removeItem('current_user')
-
+					toast.success("Log Out Successfull")
 				}
 			},
 			getStrat: async () => {
@@ -218,7 +220,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addItem: (id) => {
 				const { access_token } = getStore();
-
+				if (!access_token) {
+					toast.error("You must be logged in to use the Store");
+					return; // Detener la ejecución si no hay token
+				}
+			
 				const url = `http://127.0.0.1:5000/cart/add/${id}`;
 				const options = {
 					method: "POST",
@@ -227,19 +233,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 						'Authorization': 'Bearer ' + access_token
 					},
 				};
-
+			
 				fetch(url, options)
-					.then(response => response.json())
+					.then(response => {
+						if (!response.ok) {
+							// Si el estado es 401, mostrar el mensaje de no autenticado
+							if (response.status === 401) {
+								toast.error("You must be logged in");
+							}
+							throw new Error(response.statusText);
+						}
+						return response.json();
+					})
 					.then(data => {
 						if (data.success) {
 							console.log('Response from addItem:', data);
 							setStore({ cart: data });
-						} else { data.msg }
-
-
+							toast.success("Product added to cart successfully");
+						} else if (data.msg) {
+							toast.error(data.msg);
+						}
 					})
 					.catch(error => console.error('Error adding to cart:', error));
 			},
+			
 
 			decreaseItem: (id) => {
 				const { access_token } = getStore();
@@ -281,6 +298,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						console.log('Response from deleteItem:', data);
 						setStore({ cart: data });
+						toast.error("Item was deleted from your Cart")
 					})
 					.catch(error => {
 
@@ -304,6 +322,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const datos = await response.json()
 					setStore({ cart: datos })
 					console.log(datos.success)
+					
 				} catch (error) {
 					console.log(error.message)
 				}

@@ -28,6 +28,8 @@ import UserOrders from './components/Admin/UserOrders'
 import DetailsView from './components/GuitarStore/DetailsView'
 import About from './components/Pages/About'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -58,8 +60,23 @@ function App() {
         <Route path="/userorders/:userId" element={<UserOrders />} />
         <Route path="/guitar/:guitarId" element={<DetailsView />} />
         <Route path="/about" element={<About />} />
+        
       </Routes>
+      <ToastContainer 
+      position="top-left"
+      autoClose={2500}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      
+      />
     </BrowserRouter>
+    
   )
 }
 

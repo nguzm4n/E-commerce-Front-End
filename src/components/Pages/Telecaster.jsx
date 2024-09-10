@@ -32,7 +32,7 @@ const Store = () => {
           <div className="col-lg-10 bg-secondary parrilla d-flex flex-wrap">
           
           {store.guitars ? store.guitars.guitars.map((guitar) => (
-              <div key={guitar.id} className="col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+              <div key={guitar.id} className="col-md-6 col-lg-4 mb-4 d-flex justify-content-center cart-container">
                 <GuitarCard
                   id={guitar.id}
                   img={guitar.avatar}

@@ -30,7 +30,7 @@ const Store = () => {
         <div className="row">
           <div className="col-lg-1 bg-dark">
           </div>
-          <div className="col-lg-10 bg-secondary parrilla d-flex flex-wrap">
+          <div className="col-lg-10 bg-secondary parrilla d-flex flex-wrap cart-container">
 
             {store.guitars ? store.guitars.guitars.map((guitar) => (
               <div key={guitar.id} className="col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
