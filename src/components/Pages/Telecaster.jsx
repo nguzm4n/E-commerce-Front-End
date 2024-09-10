@@ -29,17 +29,17 @@ const Store = () => {
         <div className="row">
           <div className="col-lg-1 bg-dark">
           </div>
-          <div className="col-lg-10 bg-secondary parrilla d-flex flex-wrap">
+          <div className="col-lg-10 bg-secondary parrilla d-flex flex-wrap cat-container ">
           
           {store.guitars ? store.guitars.guitars.map((guitar) => (
-              <div key={guitar.id} className="col-md-6 col-lg-4 mb-4 d-flex justify-content-center cart-container">
+              <div key={guitar.id} className="col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
                 <GuitarCard
                   id={guitar.id}
                   img={guitar.avatar}
                   name={guitar.name}
                   price={`$${guitar.price}.00`}
                   Onclick={() => { actions.addItem(guitar.id) }}
-                  seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
+                  seeDetails={() => {actions.getGuitarId(guitar.id, navigate)}}
                 />
               </div>
             )) : <Success  text={"Loading ..."}/>}

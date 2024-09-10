@@ -32,7 +32,7 @@ const SearchResults = () => {
                   name={guitar.name}
                   price={`$${guitar.price}.00`}
                   Onclick={() => { actions.addItem(guitar.id) }}
-                  seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
+                  seeDetails={() => {actions.getGuitarId(guitar.id, navigate)}}
                 />
               </div>
             )) : <p>Loading...</p>}

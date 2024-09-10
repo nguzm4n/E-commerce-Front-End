@@ -26,7 +26,7 @@ const DetailsView = () => {
             </div>
             <div className="col-lg-10 bg-secondary parrilla d-flex justify-content-center cart-container">
             
-                <DetailCard
+                {store.guitarId ?  <DetailCard
                   id={store.guitarId.guitar.id}
                   img={store.guitarId.guitar.avatar}
                   name={store.guitarId.guitar.name}
@@ -35,7 +35,7 @@ const DetailsView = () => {
                   stock={store.guitarId.guitar.stock_quantity}
                   onClick={() => { actions.addItem(store.guitarId.guitar.id) }}
                   // seeDetails={() => {navigate(`/guitar/${guitar.id}`)}}
-                />
+                /> : null}
              
             
               

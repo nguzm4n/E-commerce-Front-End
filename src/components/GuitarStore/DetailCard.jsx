@@ -1,13 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import '../Styles/Store/Store.css'
-import { GiGuitarHead } from "react-icons/gi";
-import { Context } from '../../store/Appcontext.jsx';
-import GuitarCard from './GuitarCard.jsx'
-import CardTest from './CardTest.jsx'
-import Footer from '../Home/Footer.jsx'
-import { useNavigate, useParams } from 'react-router-dom';
 import '../Styles/Store/DetailCard.css'
-import Rating from './Rating.jsx';
+
 
 const DetailCard = ({ img, name, description, price, stock, buy, onClick }) => {
   return (
