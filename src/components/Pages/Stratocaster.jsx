@@ -6,7 +6,7 @@ import GuitarCard from '../GuitarStore/GuitarCard.jsx'
 import CardTest from '../GuitarStore/CardTest.jsx'
 import Footer from '../Home/Footer.jsx'
 import { useNavigate, useParams } from 'react-router-dom';
-
+import Success from '../Cart/Success.jsx'
 
 const Store = () => {
 
@@ -44,7 +44,7 @@ const Store = () => {
                   seeDetails={() => {actions.getGuitarId(guitar.id, navigate)}}
                 />
               </div>
-            )) : <p>Loading...</p>}
+            )) : <Success  text={"Loading ..."}/>}
           </div>
           <div className="col-lg-1 bg-dark">
           </div>
