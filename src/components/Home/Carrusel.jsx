@@ -1,5 +1,8 @@
 import React from 'react';
 import '../Styles/Home/Carrusel.css';
+import carrusel1 from '../img/Carrusel/carrusel1.jpg'
+import carrusel2 from '../img/Carrusel/carrusel2.jpg'
+import carrusel3 from '../img/Carrusel/carrusel3.jpg'
 
 const Carrusel = () => {
     return (
@@ -11,7 +14,7 @@ const Carrusel = () => {
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
                                     <img
-                                        src="https://github.com/nguzm4n/E-commerce-Front-End/blob/main/src/components/img/Carrusel/carrusel1.jpg?raw=true"
+                                        src={carrusel1}
                                         className="d-block w-100 imagen-carrusel"
                                         alt="..."
                                         loading="lazy"
@@ -19,7 +22,7 @@ const Carrusel = () => {
                                 </div>
                                 <div className="carousel-item">
                                     <img
-                                        src="https://github.com/nguzm4n/E-commerce-Front-End/blob/main/src/components/img/Carrusel/carrusel3.jpg?raw=true"
+                                        src={carrusel2}
                                         className="d-block w-100 imagen-carrusel"
                                         alt="..."
                                         loading="lazy"
@@ -27,7 +30,7 @@ const Carrusel = () => {
                                 </div>
                                 <div className="carousel-item">
                                     <img
-                                        src="https://github.com/nguzm4n/E-commerce-Front-End/blob/main/src/components/img/Carrusel/carrusel2.jpg?raw=true"
+                                        src={carrusel3}
                                         className="d-block w-100 imagen-carrusel"
                                         alt="..."
                                         loading="lazy"
