@@ -1,8 +1,8 @@
 import React from 'react';
 import '../Styles/Home/Carrusel.css';
-import carrusel1 from '../img/Carrusel/carrusel1.jpg'
-import carrusel2 from '../img/Carrusel/carrusel2.jpg'
-import carrusel3 from '../img/Carrusel/carrusel3.jpg'
+import carrusel1 from '../img/Carrusel/carrusel1.webp'
+import carrusel2 from '../img/Carrusel/carrusel2.webp'
+import carrusel3 from '../img/Carrusel/carrusel3.webp'
 
 const Carrusel = () => {
     return (
