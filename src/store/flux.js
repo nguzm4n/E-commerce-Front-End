@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					};
 
-					const response = await fetch(`http://e-commerce-back-end-production-1b0b.up.railway.app:8080/login`, options);
+					const response = await fetch(`http://e-commerce-back-end-production-1b0b.up.railway.app/login`, options);
 					const data = await response.json();
 
 					if (data.msg) {
@@ -72,7 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					}
 
-					const response = await fetch(`http://e-commerce-back-end-production-1b0b.up.railway.app:8080/signup`, option)
+					const response = await fetch(`http://127.0.0.1:5000/signup`, option)
 					const datos = await response.json()
 					const { cancelForm } = getActions()
 					if (datos.msg) {
@@ -138,7 +138,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getStrat: async () => {
 				try {
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/getstrat';
+					const url = 'http://127.0.0.1:5000/getstrat';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -155,7 +155,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getTele: async () => {
 				try {
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/getsg';
+					const url = 'http://127.0.0.1:5000/getsg';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -171,7 +171,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getSg: async () => {
 				try {
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/getsg';
+					const url = 'http://127.0.0.1:5000/getsg';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -187,7 +187,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getGuitarId: async (guitarId, navigate) => {
 				try {
-					const url = `e-commerce-back-end-production-1b0b.up.railway.app:8080/getguitarid/${guitarId}`;
+					const url = `http://127.0.0.1:5000/getguitarid/${guitarId}`;
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -204,7 +204,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getAllGuitars: async () => {
 				try {
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/getall';
+					const url = 'http://127.0.0.1:5000/getall';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
@@ -225,7 +225,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return; // Detener la ejecución si no hay token
 				}
 			
-				const url = `e-commerce-back-end-production-1b0b.up.railway.app:8080/cart/add/${id}`;
+				const url = `http://127.0.0.1:5000/cart/add/${id}`;
 				const options = {
 					method: "POST",
 					headers: {
@@ -261,7 +261,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			decreaseItem: (id) => {
 				const { access_token } = getStore();
 
-				const url = `e-commerce-back-end-production-1b0b.up.railway.app:8080/cart/item/${id}/decrement`;
+				const url = `http://127.0.0.1:5000/cart/item/${id}/decrement`;
 				const options = {
 					method: "POST",
 					headers: {
@@ -283,7 +283,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			deleteItem: (id) => {
 				const { access_token } = getStore()
-				const url = `e-commerce-back-end-production-1b0b.up.railway.app:8080/cart/remove/${id}`
+				const url = `http://127.0.0.1:5000/cart/remove/${id}`
 				const options = {
 					method: 'DELETE',
 					headers: {
@@ -309,7 +309,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getCart: async () => {
 				try {
 					const { access_token } = getStore()
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/cart';
+					const url = 'http://127.0.0.1:5000/cart';
 					const options = {
 						method: "GET",
 						headers: {
@@ -338,7 +338,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					};
 
-					const response = await fetch(`e-commerce-back-end-production-1b0b.up.railway.app:8080/search`, options);
+					const response = await fetch(`http://127.0.0.1:5000/search`, options);
 					const datos = await response.json();
 
 					if (response.ok) {
@@ -363,7 +363,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					};
 
-					const response = await fetch('e-commerce-back-end-production-1b0b.up.railway.app:8080/order', options);
+					const response = await fetch('http://127.0.0.1:5000/order', options);
 					const data = await response.json();
 
 					if (response.ok) {
@@ -391,7 +391,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					};
 
 					console.log("About to send fetch request");
-					const response = await fetch('e-commerce-back-end-production-1b0b.up.railway.app:8080/order', options);
+					const response = await fetch('http://127.0.0.1:5000/order', options);
 					console.log("Received response", response);
 					const data = await response.json();
 
@@ -411,7 +411,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getAllOrders: async () => {
 				try {
 					const { access_token } = getStore();
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/userorders';
+					const url = 'http://127.0.0.1:5000/userorders';
 					const options = {
 						method: "GET",
 						headers: {
@@ -445,7 +445,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getFullOrders: async () => {
 				const { access_token } = getStore();
 				try {
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/userorders';
+					const url = 'http://127.0.0.1:5000/userorders';
 					const options = {
 						method: "GET",
 						headers: {
@@ -469,7 +469,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 				try {
-					const response = await fetch(`e-commerce-back-end-production-1b0b.up.railway.app:8080/order/${orderId}`, {
+					const response = await fetch(`http://127.0.0.1:5000/order/${orderId}`, {
 						method: 'GET',
 						headers: {
 							'Content-Type': 'application/json',
@@ -495,7 +495,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 				try {
-					const response = await fetch(`e-commerce-back-end-production-1b0b.up.railway.app:8080/order/${orderId}`, {
+					const response = await fetch(`http://127.0.0.1:5000/order/${orderId}`, {
 						method: 'GET',
 						headers: {
 							'Content-Type': 'application/json',
@@ -518,7 +518,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			deleteOrder: (id) => {
 				const { access_token } = getStore()
-				const url = `e-commerce-back-end-production-1b0b.up.railway.app:8080/delete/order/${id}`
+				const url = `http://127.0.0.1:5000/delete/order/${id}`
 				const options = {
 					method: 'DELETE',
 					headers: {
@@ -543,7 +543,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getAllUsers: async () => {
 				const { access_token } = getStore()
 				try {
-					const url = 'e-commerce-back-end-production-1b0b.up.railway.app:8080/admin/users';
+					const url = 'http://127.0.0.1:5000/admin/users';
 					const options = {
 						method: "GET",
 						headers: {
@@ -564,7 +564,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const { access_token } = getStore()
 		
-				  const response = await fetch('e-commerce-back-end-production-1b0b.up.railway.app:8080/admin/search_user', {
+				  const response = await fetch('http://127.0.0.1:5000/admin/search_user', {
 					method: 'POST',
 					headers: {
 					  'Content-Type': 'application/json',
@@ -595,7 +595,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 				  const token = localStorage.getItem("token"); // Obtener el token JWT si es necesario
 		
-				  const response = await fetch(`e-commerce-back-end-production-1b0b.up.railway.app:8080/admin/user_orders/${userId}`, {
+				  const response = await fetch(`http://127.0.0.1:5000/admin/user_orders/${userId}`, {
 					method: 'GET',
 					headers: {
 					  'Content-Type': 'application/json',
@@ -619,7 +619,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			 
 			  AdminDeleteOrder: (orderId, userId) => {
 				const { access_token } = getStore()
-				const url = `e-commerce-back-end-production-1b0b.up.railway.app:8080/admin/order/${orderId}/${userId}`
+				const url = `http://127.0.0.1:5000/admin/order/${orderId}/${userId}`
 				const options = {
 					method: 'DELETE',
 					headers: {
