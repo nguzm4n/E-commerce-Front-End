@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					};
 
-					const response = await fetch(`http://e-commerce-back-end-production-1b0b.up.railway.app/login`, options);
+					const response = await fetch(`https://e-commerce-back-end-production-1b0b.up.railway.app/login`, options);
 					const data = await response.json();
 
 					if (data.msg) {
