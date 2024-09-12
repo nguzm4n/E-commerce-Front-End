@@ -155,7 +155,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			getTele: async () => {
 				try {
-					const url = 'https://e-commerce-back-end-production-1b0b.up.railway.app/getsg';
+					const url = 'https://e-commerce-back-end-production-1b0b.up.railway.app/gettelecaster';
 					const options = {
 						method: "GET",
 						headers: { 'Content-Type': 'application/json' }
