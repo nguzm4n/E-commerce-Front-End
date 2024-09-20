@@ -42,11 +42,7 @@ In the package.json file, you can find several scripts to facilitate development
 ## Main Libraries Used
 
     React: The core framework used for building the user interface.
-    Vite: A fast build tool used for development and production builds.
     Bootstrap: For responsive and mobile-first UI components.
-    React Bootstrap: Bootstrap components as React components.
-    TailwindCSS: A utility-first CSS framework for custom styling.
-    Cloudinary: For managing and optimizing images.
     PayPal: For integrating payment processing.
     React Toastify: For showing notifications in the UI.
 
