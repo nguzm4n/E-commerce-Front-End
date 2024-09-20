@@ -14,7 +14,7 @@ System Requirements
 
 ## Installing Dependencies
 
-First, clone the repository and navigate to the project's root directory:
+### First, clone the repository and navigate to the project's root directory:
 
 bash
 
@@ -75,7 +75,7 @@ Payment Integration
 The project integrates PayPal for payment processing. The @paypal/react-paypal-js library is used to embed PayPal buttons and handle transactions.
 Running the Project
 
-To run the project locally in development mode, use:
+## To run the project locally in development mode, use:
 
 bash
 
